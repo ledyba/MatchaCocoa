@@ -20,22 +20,22 @@ const MAX = 100000;
   let before = new Date();
   let result = 0;
   for(let i = 0; i < MAX; i++) {
-    let str = SearchStrs[(Math.random() * SearchStrs.length) | 0];
+    let str = SearchStrs[(i % SearchStrs.length) | 0];
     if(sm(str)){
       result++;
     }
   }
-  console.log("[State Machine] Time: "+(new Date()-before)+"ms");
+  console.log("[State Machine] Time: "+(new Date()-before)+"ms / match: "+result);
 }
 
 {
   let before = new Date();
   let result = 0;
   for(let i = 0; i < MAX; i++) {
-    let str = SearchStrs[(Math.random() * SearchStrs.length) | 0];
+    let str = SearchStrs[(i % SearchStrs.length) | 0];
     if(normal(str)){
       result++;
     }
   }
-  console.log("[Normal] Time: "+(new Date()-before)+"ms");
+  console.log("[Normal] Time: "+(new Date()-before)+"ms / match: "+result);
 }
