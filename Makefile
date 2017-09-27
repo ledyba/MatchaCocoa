@@ -4,7 +4,7 @@ all:
 	stack build
 
 run:
-	stack exec MatchaCocoa
+	stack exec matcha-cocoa
 
 test:
 	stack test

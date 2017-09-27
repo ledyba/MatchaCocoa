@@ -1,15 +1,38 @@
 module MatchaCocoa.Trie (
   Node(..),
-  buildTrie
+  Payload(..),
+  build,
+  match
 ) where
 
-data Node = Node [(String, Node)] | EndNode deriving (Eq, Show)
+
+data Payload = Payload Int deriving (Eq, Show)
+data Node = Node [(String, Node)] Payload
+          | EndNode Payload deriving (Eq, Show)
+
+emptyPayload :: Payload
+emptyPayload = Payload 0
 
 emptyTrie :: Node
-emptyTrie = Node []
+emptyTrie = Node [] emptyPayload
 
-buildTrie :: [String] -> Node
-buildTrie = foldl appendWord emptyTrie
+build :: [String] -> Node
+build = foldl appendWord emptyTrie
+
+match :: Node -> String -> Bool
+match (EndNode _) [] = True
+match (EndNode _) _ = False
+
+match (Node nodes _) word = match' nodes
+  where
+    match' :: [(String,Node)] -> Bool
+    match' [] = False
+    match' ((str, node):xs) =
+      case prefixLen str word of
+        ([], [], []) -> match node []
+        ([], _, _) -> match' xs
+        (_, [], left) -> match node left
+        (_, _, _) -> False
 
 prefixLen' :: String -> String -> String -> (String, String, String)
 prefixLen' cs [] ys = (cs, [], ys)
@@ -21,20 +44,21 @@ prefixLen :: String -> String -> (String, String, String)
 prefixLen xs ys = prefixLen' [] xs ys
 
 appendWord :: Node -> String -> Node
-appendWord (Node nodes) word = Node (append nodes)
+appendWord (Node nodes p) word = Node (append nodes) p
   where
+    -- TODO: Tail Recursive.
     append :: [(String,Node)] -> [(String,Node)]
-    append [] = [(word, EndNode)]
+    append [] = [(word, EndNode emptyPayload)]
     append (c@(cstr, cnode):leftNodes) =
           case prefixLen cstr word of
-            ([], [], []) -> c:leftNodes
-            ([], _, _) -> (c:(append leftNodes))
-            (_, [], []) -> c:leftNodes
+            ([], [], []) -> c:leftNodes -- Matches. the same empty word.
+            ([], _, _) -> (c:(append leftNodes)) -- Not matched. Try next.
+            (_, [], []) -> c:leftNodes -- Matches. the same word.
             (commonStr, [], leftWord) -> case cnode of
-              Node _ -> (commonStr, appendWord cnode leftWord):leftNodes
-              EndNode -> (commonStr, Node [("", EndNode), (leftWord, EndNode)]):leftNodes
+              Node _ _-> (commonStr, appendWord cnode leftWord):leftNodes
+              EndNode p1 -> (commonStr, Node [("", EndNode p1), (leftWord, EndNode emptyPayload)] emptyPayload):leftNodes
             (commonStr, leftStr, leftWord) ->
-              if leftWord < leftStr then (commonStr, Node [(leftWord, EndNode),(leftStr, cnode)]):leftNodes
-                                    else (commonStr, Node [(leftStr, cnode),(leftWord, EndNode)]):leftNodes
+              if leftWord < leftStr then (commonStr, Node [(leftWord, EndNode emptyPayload),(leftStr, cnode)] emptyPayload):leftNodes
+                                    else (commonStr, Node [(leftStr, cnode),(leftWord, EndNode emptyPayload)] emptyPayload):leftNodes
 
-appendWord EndNode word = error "[BUG] appendWord' called by EndNode"
+appendWord (EndNode _) _ = error "[BUG] appendWord' called by EndNode"
