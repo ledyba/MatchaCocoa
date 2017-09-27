@@ -3,8 +3,8 @@
 all:
 	stack build
 
-run:
-	stack exec matcha-cocoa
+run: all
+	stack exec matcha-cocoa js words.txt > words.js
 
 test:
 	stack test
