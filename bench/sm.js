@@ -1,4 +1,4 @@
-var matcher = function(str) {
+module.exports = function(str) {
   let state = 0;
   let pos = 0;
   let cur = 0;
@@ -1635,8 +1635,4 @@ var matcher = function(str) {
     default: throw new Exception('Unknown state: '+state);
   }
   return false;
-};
-
-console.log(matcher("ピカチュウ"));
-console.log(matcher("ピッ ピカチュウ"));
-console.log(matcher("今日も一日がんばるぞい！"));
+}

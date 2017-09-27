@@ -35,8 +35,9 @@ compileSM :: CompileTarget -> StateMachine -> String
 compileSM JS (StateMachine conditions) = join "" ([
     "function(str) {",
     "  let state = 0;",
-    "  let cur = str;",
-    "  for(;str.length > 0;) switch(state) {"] ++
+    "  let pos = 0;",
+    "  let cur = 0;",
+    "  for(;pos >= str.length;) switch(state) {"] ++
     (conditions >>= (compileCond "    ")) ++
     ["    default: throw new Exception('Unknown state: '+state);",
     "  }",
@@ -47,16 +48,16 @@ compileSM JS (StateMachine conditions) = join "" ([
         compileCond indent (state, nexts) = fmap (indent++) (
             ["case "++(show state)++":"] ++
             (nexts >>= \(str, next) -> fmap ("  "++) $ compileNext str next)++
-            ["  str = str.slice(1); cur = str; continue;"])
+            ["  pos++; cur = pos; continue;"])
         compileNext :: String -> Int -> [String]
         compileNext str next =
             if next > 0 then [
-              "if(cur.startsWith('"++str++"')) {",
+              "if(str.startsWith('"++str++"', cur)) {",
               "  state="++(show next)++";",
-              "  cur = cur.slice("++(show $ length str)++");",
+              "  cur += "++(show $ length str)++";",
               "  continue;",
               "}"]
-            else ["if(cur.startsWith('"++str++"')) return true;"]
+            else ["if(str,startsWith('"++str++"', cur)) return true;"]
 compileSM _ _ = error "NotImplemented"
 
 setSym :: Node -> Int -> (Node, Int)

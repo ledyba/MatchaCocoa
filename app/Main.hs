@@ -1,28 +1,32 @@
 module Main where
 
+import Prelude hiding (words)
 import Data.String.Utils (strip, startswith)
 import System.Environment (getArgs)
 import MatchaCocoa(compile, CompileTarget(..))
 import System.IO (hPutStrLn, stderr)
 
+main :: IO ()
 main = do
     args <- getArgs
-    case args of
-      "js":left -> compileIO JS left
-      "php":left -> compileIO PHP left
-      _ -> hPutStrLn stderr "matcha-cocoa (js|php) files..."
-    
+    if length args < 1
+      then hPutStrLn stderr "matcha-cocoa (js|php) files..."
+      else do
+        let (target:files) = args
+        words <- readWords files
+        case target of
+          "js" -> putStrLn (compile JS words)
+          "php" -> hPutStrLn stderr "Not Implemented for PHP"
 
-compileIO :: CompileTarget -> [String] -> IO ()
-compileIO PHP files = hPutStrLn stderr "Not Implemented for PHP"
-compileIO JS files = do
-  wordsRaw <- mapM (\fname -> fmap lines (readFile fname)) files
-  let words = (concat wordsRaw) >>= filterComment
-  putStrLn (compile JS words)
 
-filterComment line =
-         if stripped `startswith` "#" then []
-    else if stripped == "" then []
-    else [stripped]
-  where
-    stripped = (strip line)
+--
+readWords :: [String] -> IO [String]
+readWords files =  do
+    wordsRaw <- mapM (\fname -> fmap lines (readFile fname)) files
+    return $ (concat wordsRaw) >>= filterComment
+    where
+      filterComment line = if startswith "#" stripped then []
+                           else if stripped == "" then []
+                           else [stripped]
+        where
+          stripped = (strip line)

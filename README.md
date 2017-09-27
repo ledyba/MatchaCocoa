@@ -2,7 +2,7 @@
 
 ワードの一覧にマッチするjs(とphp)のプログラムを生成するプログラムです。
 
-A compiler to generate words matcher program in JS (and PHP).
+A compiler to generate words matcher program for JS (and PHP).
 
 ## How to use
 ```sh
