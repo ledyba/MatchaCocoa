@@ -37,7 +37,7 @@ let StateMachine = function(){
       result++;
     }
   }
-  console.log("[Native State Machine Code] Time: "+(new Date()-before)+"ms, matches: "+result + " / " + MAX);
+  console.log("[Native State Machine] Time: "+(new Date()-before)+"ms, matches: "+result + " / " + MAX);
 };
 
 let Regex = function(){
