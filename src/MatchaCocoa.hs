@@ -1,16 +1,24 @@
 module MatchaCocoa
     (CompileTarget(..), compile) where
 
+import Prelude hiding (words)
 import MatchaCocoa.Trie(Node(..), build, Payload(..))
 import Data.List (intercalate)
 
-data CompileTarget = PHP | JS
+data CompileTarget = PHP | JS | REGEX
 
 compile :: CompileTarget -> [String] -> String
-compile target words = compileSM target sm
+compile JS words = compileSM JS sm
     where
         (trie,_) = setSym (build words) 0
         sm = makeStateMachine trie
+
+compile REGEX words = compile' (build words)
+    where
+        compile' (EndNode _) = ""
+        compile' (Node nodes _) = "(?:"++(intercalate "|" (fmap compileNodes nodes))++")"
+            where
+                compileNodes (str, node) = str ++ (compile' node)
 
 data StateMachine = StateMachine [(Int, [(String, Int)])] deriving (Show, Eq)
 makeStateMachine :: Node -> StateMachine
@@ -37,7 +45,7 @@ compileSM JS (StateMachine conditions) = join "" ([
     "  let state = 0;",
     "  let pos = 0;",
     "  let cur = 0;",
-    "  for(;pos >= str.length;) switch(state) {"] ++
+    "  for(;pos < str.length;) switch(state) {"] ++
     (conditions >>= (compileCond "    ")) ++
     ["    default: throw new Exception('Unknown state: '+state);",
     "  }",
@@ -57,7 +65,7 @@ compileSM JS (StateMachine conditions) = join "" ([
               "  cur += "++(show $ length str)++";",
               "  continue;",
               "}"]
-            else ["if(str,startsWith('"++str++"', cur)) return true;"]
+            else ["if(str.startsWith('"++str++"', cur)) return true;"]
 compileSM _ _ = error "NotImplemented"
 
 setSym :: Node -> Int -> (Node, Int)

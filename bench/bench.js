@@ -1,4 +1,5 @@
 const sm = require("./sm.js");
+const regex = require("./regex.js");
 const normal = require("./normal.js");
 
 const SearchStrs = [
@@ -13,30 +14,55 @@ const SearchStrs = [
   // https://ja.wikipedia.org/wiki/%E3%83%A8%E3%83%BC%E3%82%AF%E3%82%BF%E3%82%A6%E3%83%B3%E3%81%AE%E6%88%A6%E3%81%84
   `ヨークタウンの戦い（Battle of Yorktown）は、1781年に起こったアメリカ独立戦争を事実上終結させた決定的な戦闘。
   バージニア植民地東岸のグレートブリテン王国（イギリス）軍最終拠点であったヨークタウンにて、米仏連合軍がチャールズ・コーンウォリス率いるイギリス軍約7,000を包囲、降伏させた。この戦いによって、アメリカ独立戦争における植民地軍の勝利は確定し、独立戦争は事実上の終結を見た。`,
-  `今日も一日がんばるぞい！`
+  // https://ja.wikipedia.org/wiki/%E3%83%9D%E3%82%B1%E3%83%83%E3%83%88%E3%83%A2%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%BC_(%E3%82%A2%E3%83%8B%E3%83%A1)
+  `「ポケモンマスター」を目指す少年・サトシと、相棒のピカチュウをはじめとしたポケモンの成長を描いた物語とキャラクター性に焦点を当て、ゲーム版『ポケットモンスター 赤・緑』の発売から1年あまり経った1997年 (平成9年)4月1日から、テレビ東京系列で放送を開始した。
+  開始当初はセル画で制作されていたが、2002年（平成14年）8月[注 6] より、デジタル制作に移行した。ただし、主題歌の映像などはそれ以前からデジタル化していた。『アドバンスジェネレーション』の後期からはポケモンの技などにCGが使用されるようになった。
+  地上デジタルテレビ放送が全国に広がって以降も標準画質（画面比4:3）での制作が続いていたが、2009年 (平成21年)4月2日放送[注 6] 分からハイビジョン制作に移行した[1]。また、アナログ放送では2009年（平成21年）10月1日放送[注 6] からレターボックスでの放送に移行した。2012年（平成24年）1月5日放送からは連動データ放送[注 7] も開始されている。この他、テレビ東京系列（開始当初より）などでは字幕放送[注 8]を行っている。また、字幕放送で表示される技の名前は漢字を使用して、ワンセグ放送以外では上にふりがなをふっている（例：かえんほうしゃ→火炎放射など）。なお、一部の技は字幕放送では一部分だけひらがなで表示されることも稀にある。
+  1997年（平成9年）12月16日の第38話『でんのうせんしポリゴン』の放送時には「ポケモンショック」が発生するが[注 9]、四か月の放送休止を乗り越えて放送は再開された。
+  1998年（平成10年）夏には劇場版の第1作『ミュウツーの逆襲』を公開、同年に日本で公開された映画の興行成績第4位と興行収入72億4000万円を記録した[注 10]。その後も毎年7月中旬から夏休みにかけて劇場版が上映されている。
+  2016年4月7日より、放送時間を5分繰り上げ、18:55 - 19:25の放送となった[3]。1998年4月に放送再開して以来、18年ぶりに放送時間が変更となる。
+  2017年（平成29年）4月で放送開始から20周年を迎えた長寿番組であり、現在でもテレビ東京製作のアニメシリーズでは最長寿アニメ番組である。
+  長い放送期間でスタッフの多くは変動しているが、総監督の湯山邦彦や劇伴担当の宮崎慎二等、放送開始当初から現在まで製作に携わっているスタッフもいる。劇中のナレーションは全シリーズ一貫して石塚運昇が担当。`,
+  `今日も一日がんばるぞい！`,
 ];
-const MAX = 100000;
+const MAX = SearchStrs.length * 10000;
 
-{
+let StateMachine = function(){
   let before = new Date();
   let result = 0;
   for(let i = 0; i < MAX; i++) {
-    let str = SearchStrs[(i % SearchStrs.length) | 0];
+    let str = SearchStrs[(i % SearchStrs.length)];
     if(sm(str)){
       result++;
     }
   }
-  console.log("[State Machine] Time: "+(new Date()-before)+"ms / match: "+result);
-}
+  console.log("[State Machine] Time: "+(new Date()-before)+"ms, matches: "+result + " / " + MAX);
+};
 
-{
+let Regex = function(){
   let before = new Date();
   let result = 0;
   for(let i = 0; i < MAX; i++) {
-    let str = SearchStrs[(i % SearchStrs.length) | 0];
+    let str = SearchStrs[(i % SearchStrs.length)];
+    if(regex(str)){
+      result++;
+    }
+  }
+  console.log("[Regex] Time: "+(new Date()-before)+"ms, matches: "+result + " / " + MAX);
+};
+
+let Normal = function(){
+  let before = new Date();
+  let result = 0;
+  for(let i = 0; i < MAX; i++) {
+    let str = SearchStrs[(i % SearchStrs.length)];
     if(normal(str)){
       result++;
     }
   }
-  console.log("[Normal] Time: "+(new Date()-before)+"ms / match: "+result);
-}
+  console.log("[Normal] Time: "+(new Date()-before)+"ms, matches: "+result + " / " + MAX);
+};
+
+Normal();
+Regex();
+StateMachine();

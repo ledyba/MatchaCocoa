@@ -9,7 +9,7 @@ module.exports = function(str) {
   }
   return false;
 };
-const WORDS=[
+const WORDS = [
   "フシギダネ",
   "フシギソウ",
   "フシギバナ",

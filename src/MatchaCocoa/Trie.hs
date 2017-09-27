@@ -35,8 +35,8 @@ match (Node nodes _) word = match' nodes
         (_, _, _) -> False
 
 prefixLen' :: String -> String -> String -> (String, String, String)
-prefixLen' cs [] ys = (cs, [], ys)
-prefixLen' cs xs [] = (cs, xs, [])
+prefixLen' cs [] ys = (reverse cs, [], ys)
+prefixLen' cs xs [] = (reverse cs, xs, [])
 prefixLen' cs (x:xs) (y:ys) = if x == y then (prefixLen' (x:cs) xs ys)
                                         else (reverse cs, x:xs, y:ys)
 
