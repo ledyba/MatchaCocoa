@@ -36,7 +36,7 @@ compileSM JS (StateMachine conditions) = join "" ([
     "function(str) {",
     "  let state = 0;",
     "  let cur = str;",
-    "  for(;;str.length > 0) switch(state) {"] ++
+    "  for(;str.length > 0;) switch(state) {"] ++
     (conditions >>= (compileCond "    ")) ++
     ["    default: throw new Exception('Unknown state: '+state);",
     "  }",
@@ -56,7 +56,7 @@ compileSM JS (StateMachine conditions) = join "" ([
               "  cur = cur.slice("++(show $ length str)++");",
               "  continue;",
               "}"]
-            else ["if(str.startsWith('"++str++"')) return true;"]
+            else ["if(cur.startsWith('"++str++"')) return true;"]
 compileSM _ _ = error "NotImplemented"
 
 setSym :: Node -> Int -> (Node, Int)
