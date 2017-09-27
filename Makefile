@@ -1,4 +1,4 @@
-.PHONY: all run test
+.PHONY: all run test bench
 
 all:
 	stack build
@@ -8,3 +8,6 @@ run: all
 
 test:
 	stack test
+
+bench:
+	cd bench && node bench.js
