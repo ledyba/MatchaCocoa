@@ -25,7 +25,7 @@ const SearchStrs = [
   長い放送期間でスタッフの多くは変動しているが、総監督の湯山邦彦や劇伴担当の宮崎慎二等、放送開始当初から現在まで製作に携わっているスタッフもいる。劇中のナレーションは全シリーズ一貫して石塚運昇が担当。`,
   `今日も一日がんばるぞい！`,
 ];
-const MAX = SearchStrs.length * 10000;
+const MAX = SearchStrs.length * 20000;
 
 let StateMachine = function(){
   let before = new Date();
