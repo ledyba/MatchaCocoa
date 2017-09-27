@@ -16,6 +16,7 @@ main = do
         words <- readWords files
         case target of
           "js" -> putStrLn (compile JS words)
+          "js2" -> putStrLn (compile JS2 words)
           "regex" -> putStrLn (compile REGEX words)
           "php" -> hPutStrLn stderr "Not Implemented for PHP"
 

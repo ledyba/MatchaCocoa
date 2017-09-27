@@ -13,10 +13,13 @@ compile JS words = compileSM JS sm
         (trie,_) = setSym (build words) 0
         sm = makeStateMachine trie
 
-compile JS2 words = compile' (build words)
+compile JS2 words = "function(str){ for(let pos = 0; pos < str.length; pos++) { if("++body++") {return true;} } return false; }"
     where
-        compile' (EndNode _) = "return true;"
-        compile' (Node nodes _) = undefined
+        body = compile' 0 (build words)
+        compile' _ (EndNode _) = "true"
+        compile' idx (Node nodes _) = "("++(intercalate " || " (fmap compileNodes nodes))++")"
+            where
+                compileNodes (str, node) = ("(str.startsWith('"++str++"', pos + "++(show idx)++")") ++ " && " ++ (compile' (idx + length str) node) ++ ")"
 
 compile REGEX words = compile' (build words)
     where

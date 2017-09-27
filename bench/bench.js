@@ -1,5 +1,6 @@
 const sm = require("./sm.js");
 const regex = require("./regex.js");
+const naive = require("./naive.js");
 const normal = require("./normal.js");
 
 const SearchStrs = [
@@ -36,7 +37,7 @@ let StateMachine = function(){
       result++;
     }
   }
-  console.log("[State Machine] Time: "+(new Date()-before)+"ms, matches: "+result + " / " + MAX);
+  console.log("[Native State Machine Code] Time: "+(new Date()-before)+"ms, matches: "+result + " / " + MAX);
 };
 
 let Regex = function(){
@@ -49,6 +50,18 @@ let Regex = function(){
     }
   }
   console.log("[Regex] Time: "+(new Date()-before)+"ms, matches: "+result + " / " + MAX);
+};
+
+let Naive = function(){
+  let before = new Date();
+  let result = 0;
+  for(let i = 0; i < MAX; i++) {
+    let str = SearchStrs[(i % SearchStrs.length)];
+    if(naive(str)){
+      result++;
+    }
+  }
+  console.log("[Naive Native Code] Time: "+(new Date()-before)+"ms, matches: "+result + " / " + MAX);
 };
 
 let Normal = function(){
@@ -65,4 +78,5 @@ let Normal = function(){
 
 Normal();
 Regex();
+Naive();
 StateMachine();

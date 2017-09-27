@@ -22,7 +22,8 @@ See: [./bench](./bench) directory.
 
 ```sh
 % cd bench && node bench.js
-[Normal] Time: 1703ms, matches: 20000 / 100000
-[Regex] Time: 155ms, matches: 20000 / 100000
-[State Machine] Time: 19981ms, matches: 20000 / 100000
+[Normal] Time: 1751ms, matches: 20000 / 100000
+[Regex] Time: 170ms, matches: 20000 / 100000
+[Naive Native Code] Time: 86695ms, matches: 20000 / 100000
+[Native State Machine Code] Time: 21286ms, matches: 20000 / 100000
 ```
