@@ -5,13 +5,18 @@ import Prelude hiding (words)
 import MatchaCocoa.Trie(Node(..), build, Payload(..))
 import Data.List (intercalate)
 
-data CompileTarget = PHP | JS | REGEX
+data CompileTarget = PHP | JS | JS2 | REGEX
 
 compile :: CompileTarget -> [String] -> String
 compile JS words = compileSM JS sm
     where
         (trie,_) = setSym (build words) 0
         sm = makeStateMachine trie
+
+compile JS2 words = compile' (build words)
+    where
+        compile' (EndNode _) = "return true;"
+        compile' (Node nodes _) = undefined
 
 compile REGEX words = compile' (build words)
     where
