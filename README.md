@@ -1,6 +1,6 @@
 # Matcha Cocoa
 
-ワードの一覧にマッチするjs(とphp)のプログラムを生成するプログラムです。
+ワードの一覧にマッチするjsのプログラムと、regexを生成するプログラムです。
 
 A compiler to generate words matcher program for JS (and PHP).
 
@@ -8,6 +8,61 @@ A compiler to generate words matcher program for JS (and PHP).
 ```sh
 % stack build
 % stack exec matcha-cocoa js words.txt > words.js
+```
+
+## Sample
+
+```sh
+% cat simple.txt
+フシギダネ
+フシギソウ
+フシギバナ
+```
+
+```sh
+% stack exec matcha-cocoa regex simple.txt
+(?:フシギ(?:ソウ|ダネ|バナ))
+```
+
+```js
+// % stack exec matcha-cocoa js simple.txt
+function(str) {
+  let state = 0;
+  let pos = 0;
+  let cur = 0;
+  for(;pos < str.length;) switch(state) {
+    case 0:
+      if(str.startsWith('フシギ', cur)) {
+        state=1;
+        cur += 3;
+        continue;
+      }
+      pos++; cur = pos; continue;
+    case 1:
+      if(str.startsWith('ソウ', cur)) return true;
+      if(str.startsWith('ダネ', cur)) return true;
+      if(str.startsWith('バナ', cur)) return true;
+      pos++; cur = pos; continue;
+    default: throw new Exception('Unknown state: '+state);
+  }
+  return false;
+}
+```
+
+```js
+// % stack exec matcha-cocoa js2 simple.txt
+function(str){
+  for(let pos = 0; pos < str.length; pos++) {
+    if((
+      (str.startsWith('フシギ', pos + 0) &&
+        ((str.startsWith('ソウ', pos + 3) && true) ||
+        (str.startsWith('ダネ', pos + 3) && true) ||
+        (str.startsWith('バナ', pos + 3) && true))))) {
+          return true;
+    }
+  }
+  return false;
+}
 ```
 
 ## 名前の由来
