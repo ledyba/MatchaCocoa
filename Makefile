@@ -1,10 +1,16 @@
-.PHONY: all run test bench
+.PHONY: all sm naive regex test bench
 
 all:
 	stack build
 
-run: all
+sm: all
 	stack exec matcha-cocoa js-statemachine words.txt
+
+naive: all
+	stack exec matcha-cocoa js-naive words.txt
+
+regex: all
+	stack exec matcha-cocoa regex words.txt
 
 test:
 	stack test

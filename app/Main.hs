@@ -33,6 +33,7 @@ main = do
         contWithTarget target files = do
           words <- readWords files
           putStrLn (compile target words)
+          hPutStrLn stderr "Done."
 
 
 --

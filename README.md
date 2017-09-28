@@ -7,7 +7,7 @@ A compiler to generate words matcher for js and regex.
 ## How to use
 ```sh
 % stack build
-% stack exec matcha-cocoa js words.txt > words.js
+% stack exec matcha-cocoa <compile-target> words.txt > words.js
 ```
 
 ## Sample
