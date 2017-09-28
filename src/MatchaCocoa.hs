@@ -42,7 +42,7 @@ compile JS_Naive words = join "" $ [
                     [indent ++ "}"]
                 makeCond :: Int -> Char -> String
                 makeCond 0 chr = "str[pos] === " ++ (show $ ord chr)
-                makeCond i chr = "str[pos + "++(show i)++"] === " ++ (show $ ord chr)
+                makeCond i chr = "str[pos+"++(show i)++"] === " ++ (show $ ord chr)
                 
 compile Regex words = compile' (build words)
     where
