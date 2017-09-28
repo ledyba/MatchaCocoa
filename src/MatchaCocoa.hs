@@ -19,8 +19,9 @@ compile JS2 words = "function(str){ for(let pos = 0; pos < str.length; pos++) { 
         compile' _ (EndNode _) = "true"
         compile' idx (Node nodes _) = "("++(intercalate " || " (fmap compileNodes nodes))++")"
             where
-                compileNodes (str, node) = ("(str.startsWith('"++str++"', pos + "++(show idx)++")") ++ " && " ++ (compile' (idx + length str) node) ++ ")"
-
+                compileNodes (str, node@(Node _ _)) = ("(str.startsWith('"++str++"', pos + "++(show idx)++")") ++ " && " ++ (compile' (idx + length str) node) ++ ")"
+                compileNodes (str, EndNode _) = ("str.startsWith('"++str++"', pos + "++(show idx)++")")
+                
 compile REGEX words = compile' (build words)
     where
         compile' (EndNode _) = ""
