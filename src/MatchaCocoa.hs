@@ -35,7 +35,7 @@ compile JS_Naive words = join "" $ [
             where
                 compileNodes :: (String, Node) -> [String]
                 compileNodes ("", EndNode _) = [indent ++ "return true;"]
-                compileNodes (str, EndNode _) = [indent ++ "if("++(intercalate " && " (zipWith makeCond [0..] str))++") return true;"]
+                compileNodes (str, EndNode _) = [indent ++ "if("++(intercalate " && " (zipWith makeCond [idx..] str))++") return true;"]
                 compileNodes (str, node@(Node _ _)) = [
                      indent ++ "if("++(intercalate " && " (zipWith makeCond [idx..] str))++") {"] ++
                     (compile' (indent ++ "  ") (idx + length str) node) ++ 
