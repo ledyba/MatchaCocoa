@@ -10,7 +10,7 @@ usage :: IO ()
 usage = do
   hPutStrLn stderr "% stack exec matcha-cocoa <target> files..."
   hPutStrLn stderr "[targets]"
-  hPutStrLn stderr "  js-naive:        converted to js AST directly"
+  hPutStrLn stderr "  js-naive:        converted to js AST directly."
   hPutStrLn stderr "  js-statemachine: converted to state machine."
   hPutStrLn stderr "  regex:           converted to Regular Expression."
 
