@@ -1,1 +1,992 @@
-module.exports = function(str){ for(let pos = 0; pos < str.length; pos++) { if(((str.startsWith('フ', pos + 0) && ((str.startsWith('シギ', pos + 1) && (str.startsWith('ソウ', pos + 3) || str.startsWith('ダネ', pos + 3) || str.startsWith('バナ', pos + 3))) || str.startsWith('ーディン', pos + 1) || str.startsWith('リーザー', pos + 1) || str.startsWith('ァイヤー', pos + 1) || str.startsWith('ォレトス', pos + 1) || str.startsWith('ライゴン', pos + 1) || str.startsWith('ローゼル', pos + 1) || (str.startsWith('ワ', pos + 1) && (str.startsWith('ライド', pos + 2) || str.startsWith('ンテ', pos + 2))) || str.startsWith('カマル', pos + 1) || str.startsWith('ィオネ', pos + 1))) || (str.startsWith('ヒ', pos + 0) && ((str.startsWith('ト', pos + 1) && (str.startsWith('カゲ', pos + 2) || str.startsWith('デマン', pos + 2))) || str.startsWith('ノアラシ', pos + 1) || str.startsWith('マナッツ', pos + 1) || str.startsWith('メグマ', pos + 1) || str.startsWith('ンバス', pos + 1) || str.startsWith('コザル', pos + 1) || str.startsWith('ポポタス', pos + 1) || str.startsWith('ードラン', pos + 1))) || (str.startsWith('リ', pos + 0) && ((str.startsWith('ザード', pos + 1) && (str.startsWith('', pos + 4) || str.startsWith('ン', pos + 4))) || str.startsWith('ングマ', pos + 1) || str.startsWith('リーラ', pos + 1) || (str.startsWith('ー', pos + 1) && (str.startsWith('シャン', pos + 2) || str.startsWith('フィア', pos + 2))) || str.startsWith('オル', pos + 1))) || str.startsWith('ゼニガメ', pos + 0) || (str.startsWith('カ', pos + 0) && ((str.startsWith('イ', pos + 1) && ((str.startsWith('リ', pos + 2) && (str.startsWith('キー', pos + 3) || str.startsWith('ュー', pos + 3))) || str.startsWith('ロス', pos + 2) || str.startsWith('オーガ', pos + 2))) || (str.startsWith('メ', pos + 1) && (str.startsWith('ックス', pos + 2) || str.startsWith('ール', pos + 2))) || str.startsWith('モネギ', pos + 1) || (str.startsWith('ラ', pos + 1) && (str.startsWith('カラ', pos + 2) || str.startsWith('サリス', pos + 2) || str.startsWith('ナクシ', pos + 2))) || (str.startsWith('ブト', pos + 1) && (str.startsWith('', pos + 3) || str.startsWith('プス', pos + 3))) || str.startsWith('ビゴン', pos + 1) || str.startsWith('ポエラー', pos + 1) || str.startsWith('クレオン', pos + 1) || str.startsWith('ゲボウズ', pos + 1) || str.startsWith('バルドン', pos + 1))) || (str.startsWith('キ', pos + 0) && ((str.startsWith('ャ', pos + 1) && (str.startsWith('タピー', pos + 2) || str.startsWith('モメ', pos + 2))) || str.startsWith('ュウコン', pos + 1) || (str.startsWith('ング', pos + 1) && (str.startsWith('ドラ', pos + 3) || str.startsWith('ラー', pos + 3))) || str.startsWith('レイハナ', pos + 1) || str.startsWith('マワリ', pos + 1) || str.startsWith('リンリキ', pos + 1) || str.startsWith('モリ', pos + 1) || str.startsWith('ルリア', pos + 1) || (str.startsWith('ノ', pos + 1) && (str.startsWith('ガッサ', pos + 2) || str.startsWith('ココ', pos + 2))) || str.startsWith('バニア', pos + 1))) || (str.startsWith('ト', pos + 0) && (str.startsWith('サキント', pos + 1) || str.startsWith('ランセル', pos + 1) || (str.startsWith('ゲ', pos + 1) && (str.startsWith('チック', pos + 2) || str.startsWith('ピー', pos + 2) || str.startsWith('キッス', pos + 2))) || str.startsWith('ロピウス', pos + 1) || (str.startsWith('ド', pos + 1) && (str.startsWith('グラー', pos + 2) || str.startsWith('ゼルガ', pos + 2))) || (str.startsWith('リ', pos + 1) && (str.startsWith('デプス', pos + 2) || str.startsWith('トドン', pos + 2))))) || (str.startsWith('バ', pos + 0) && (str.startsWith('タフリー', pos + 1) || str.startsWith('リヤード', pos + 1) || (str.startsWith('ク', pos + 1) && (str.startsWith('オング', pos + 2) || str.startsWith('フーン', pos + 2) || str.startsWith('ーダ', pos + 2))) || (str.startsWith('ル', pos + 1) && (str.startsWith('キー', pos + 2) || str.startsWith('ビート', pos + 2))) || str.startsWith('ンギラス', pos + 1) || str.startsWith('シャーモ', pos + 1) || str.startsWith('ネブー', pos + 1))) || (str.startsWith('ビ', pos + 0) && (str.startsWith('リリダマ', pos + 1) || (str.startsWith('ー', pos + 1) && (str.startsWith('ダル', pos + 2) || str.startsWith('ドル', pos + 2) || str.startsWith('クイン', pos + 2))) || str.startsWith('ブラーバ', pos + 1) || str.startsWith('ッパ', pos + 1))) || (str.startsWith('コ', pos + 0) && (str.startsWith('クーン', pos + 1) || str.startsWith('ラッタ', pos + 1) || str.startsWith('ンパン', pos + 1) || str.startsWith('ダック', pos + 1) || (str.startsWith('イ', pos + 1) && (str.startsWith('キング', pos + 2) || str.startsWith('ル', pos + 2))) || str.startsWith('ノハナ', pos + 1) || str.startsWith('コドラ', pos + 1) || str.startsWith('ドラ', pos + 1) || str.startsWith('ータス', pos + 1) || str.startsWith('モルー', pos + 1) || (str.startsWith('ロ', pos + 1) && (str.startsWith('トック', pos + 2) || str.startsWith('ボーシ', pos + 2))) || str.startsWith('リンク', pos + 1))) || (str.startsWith('ス', pos + 0) && (str.startsWith('ピアー', pos + 1) || (str.startsWith('リー', pos + 1) && (str.startsWith('パー', pos + 3) || str.startsWith('プ', pos + 3))) || str.startsWith('ターミー', pos + 1) || str.startsWith('トライク', pos + 1) || str.startsWith('イクン', pos + 1) || str.startsWith('バメ', pos + 1) || str.startsWith('ボミー', pos + 1) || (str.startsWith('カ', pos + 1) && (str.startsWith('タンク', pos + 2) || str.startsWith('ンプー', pos + 2))) || str.startsWith('コルピ', pos + 1))) || (str.startsWith('ポ', pos + 0) && ((str.startsWith('ッ', pos + 1) && (str.startsWith('チャマ', pos + 2) || str.startsWith('ポ', pos + 2) || str.startsWith('タイシ', pos + 2))) || str.startsWith('ニータ', pos + 1) || (str.startsWith('リゴン', pos + 1) && (str.startsWith('', pos + 4) || str.startsWith('2', pos + 4) || str.startsWith('Z', pos + 4))) || str.startsWith('ポッコ', pos + 1) || str.startsWith('チエナ', pos + 1) || str.startsWith('ワルン', pos + 1))) || (str.startsWith('ピ', pos + 0) && (str.startsWith('カチュウ', pos + 1) || (str.startsWith('ジョ', pos + 1) && (str.startsWith('ット', pos + 3) || str.startsWith('ン', pos + 3))) || str.startsWith('ッピ', pos + 1) || str.startsWith('クシー', pos + 1) || str.startsWith('チュー', pos + 1) || str.startsWith('ィ', pos + 1) || str.startsWith('ンプク', pos + 1))) || (str.startsWith('ラ', pos + 0) && ((str.startsWith('イ', pos + 1) && (str.startsWith('コウ', pos + 2) || str.startsWith('チュウ', pos + 2) || str.startsWith('ボルト', pos + 2))) || (str.startsWith('ッ', pos + 1) && (str.startsWith('キー', pos + 2) || str.startsWith('タ', pos + 2))) || str.startsWith('フレシア', pos + 1) || str.startsWith('プラス', pos + 1) || str.startsWith('ンターン', pos + 1) || str.startsWith('グラージ', pos + 1) || str.startsWith('ルトス', pos + 1) || str.startsWith('クライ', pos + 1) || str.startsWith('ブカス', pos + 1) || (str.startsWith('ティ', pos + 1) && (str.startsWith('アス', pos + 3) || str.startsWith('オス', pos + 3))) || str.startsWith('ムパルド', pos + 1))) || (str.startsWith('オ', pos + 0) && (str.startsWith('コリザル', pos + 1) || (str.startsWith('ニ', pos + 1) && (str.startsWith('スズメ', pos + 2) || str.startsWith('ドリル', pos + 2) || str.startsWith('ゴーリ', pos + 2))) || (str.startsWith('ム', pos + 1) && (str.startsWith('スター', pos + 2) || str.startsWith('ナイト', pos + 2))) || str.startsWith('ーダイル', pos + 1) || str.startsWith('タチ', pos + 1) || (str.startsWith('オ', pos + 1) && (str.startsWith('スバメ', pos + 2) || str.startsWith('タチ', pos + 2))) || str.startsWith('クタン', pos + 1) || str.startsWith('ドシシ', pos + 1))) || (str.startsWith('ア', pos + 0) && (str.startsWith('ズマオウ', pos + 1) || (str.startsWith('ー', pos + 1) && ((str.startsWith('ボ', pos + 2) && (str.startsWith('', pos + 3) || str.startsWith('ック', pos + 3))) || str.startsWith('マルド', pos + 2))) || (str.startsWith('リ', pos + 1) && (str.startsWith('アドス', pos + 2) || str.startsWith('ゲイツ', pos + 2))) || str.startsWith('ンノーン', pos + 1) || str.startsWith('チャモ', pos + 1) || str.startsWith('ゲハント', pos + 1) || (str.startsWith('メ', pos + 1) && (str.startsWith('タマ', pos + 2) || str.startsWith('モース', pos + 2))) || str.startsWith('サナン', pos + 1) || str.startsWith('ノプス', pos + 1) || str.startsWith('ブソル', pos + 1) || str.startsWith('グノム', pos + 1) || str.startsWith('ルセウス', pos + 1))) || (str.startsWith('サ', pos + 0) && (str.startsWith('ワムラー', pos + 1) || (str.startsWith('ン', pos + 1) && ((str.startsWith('ダー', pos + 2) && (str.startsWith('', pos + 4) || str.startsWith('ス', pos + 4))) || (str.startsWith('ド', pos + 2) && (str.startsWith('', pos + 3) || str.startsWith('パン', pos + 3))))) || (str.startsWith('イ', pos + 1) && (str.startsWith('ドン', pos + 2) || str.startsWith('ホーン', pos + 2))) || str.startsWith('ニーゴ', pos + 1) || str.startsWith('ナギラス', pos + 1) || str.startsWith('ーナイト', pos + 1) || str.startsWith('メハダー', pos + 1) || str.startsWith('ボネア', pos + 1) || str.startsWith('マヨール', pos + 1) || str.startsWith('クラビス', pos + 1))) || (str.startsWith('ニ', pos + 0) && ((str.startsWith('ド', pos + 1) && ((str.startsWith('ラン', pos + 2) && (str.startsWith('♀', pos + 4) || str.startsWith('♂', pos + 4))) || (str.startsWith('リー', pos + 2) && (str.startsWith('ナ', pos + 4) || str.startsWith('ノ', pos + 4))) || str.startsWith('クイン', pos + 2) || str.startsWith('キング', pos + 2))) || (str.startsWith('ャ', pos + 1) && (str.startsWith('ルマー', pos + 2) || str.startsWith('ース', pos + 2))) || (str.startsWith('ョロ', pos + 1) && (str.startsWith('ゾ', pos + 3) || str.startsWith('モ', pos + 3) || str.startsWith('ボン', pos + 3) || str.startsWith('トノ', pos + 3))) || str.startsWith('ューラ', pos + 1))) || (str.startsWith('ロ', pos + 0) && (str.startsWith('コン', pos + 1) || str.startsWith('ゼリア', pos + 1) || str.startsWith('ズレイド', pos + 1) || str.startsWith('トム', pos + 1))) || (str.startsWith('プ', pos + 0) && (str.startsWith('クリン', pos + 1) || str.startsWith('リン', pos + 1) || str.startsWith('テラ', pos + 1) || str.startsWith('プリン', pos + 1) || str.startsWith('ラスル', pos + 1))) || (str.startsWith('ズ', pos + 0) && (str.startsWith('ガイドス', pos + 1) || str.startsWith('バット', pos + 1))) || (str.startsWith('ゴ', pos + 0) && ((str.startsWith('ル', pos + 1) && (str.startsWith('ダック', pos + 2) || str.startsWith('バット', pos + 2))) || (str.startsWith('ー', pos + 1) && ((str.startsWith('ス', pos + 2) && (str.startsWith('', pos + 3) || str.startsWith('ト', pos + 3))) || str.startsWith('リキー', pos + 2))) || (str.startsWith('ロー', pos + 1) && (str.startsWith('ニャ', pos + 3) || str.startsWith('ン', pos + 3))) || str.startsWith('マゾウ', pos + 1) || str.startsWith('ニョニョ', pos + 1) || str.startsWith('クリン', pos + 1) || str.startsWith('ウカザル', pos + 1) || str.startsWith('ンベ', pos + 1))) || (str.startsWith('ナ', pos + 0) && (str.startsWith('ゾノクサ', pos + 1) || (str.startsWith('ッ', pos + 1) && (str.startsWith('クラー', pos + 2) || str.startsWith('シー', pos + 2))) || (str.startsWith('マ', pos + 1) && (str.startsWith('ケロ', pos + 2) || str.startsWith('ズン', pos + 2))) || str.startsWith('エトル', pos + 1))) || (str.startsWith('ク', pos + 0) && (str.startsWith('サイハナ', pos + 1) || str.startsWith('ラブ', pos + 1) || str.startsWith('ロバット', pos + 1) || str.startsWith('ヌギダマ', pos + 1) || str.startsWith('チート', pos + 1) || str.startsWith('レセリア', pos + 1))) || (str.startsWith('パ', pos + 0) && (str.startsWith('ウワウ', pos + 1) || (str.startsWith('ラ', pos + 1) && (str.startsWith('ス', pos + 2) || str.startsWith('セクト', pos + 2))) || (str.startsWith('ル', pos + 1) && (str.startsWith('キア', pos + 2) || str.startsWith('シェン', pos + 2))) || str.startsWith('ッチール', pos + 1) || str.startsWith('ールル', pos + 1) || str.startsWith('チリス', pos + 1))) || (str.startsWith('モ', pos + 0) && (str.startsWith('ルフォン', pos + 1) || str.startsWith('ンジャラ', pos + 1) || str.startsWith('ココ', pos + 1) || str.startsWith('ウカザル', pos + 1) || str.startsWith('ジャンボ', pos + 1))) || (str.startsWith('デ', pos + 0) && ((str.startsWith('ィ', pos + 1) && (str.startsWith('アルガ', pos + 2) || str.startsWith('グダ', pos + 2))) || str.startsWith('ンリュウ', pos + 1) || str.startsWith('リバード', pos + 1) || str.startsWith('ルビル', pos + 1) || str.startsWith('オキシス', pos + 1))) || (str.startsWith('ダ', pos + 0) && (str.startsWith('グトリオ', pos + 1) || (str.startsWith('ー', pos + 1) && (str.startsWith('クライ', pos + 2) || str.startsWith('テング', pos + 2))) || str.startsWith('ンバル', pos + 1) || str.startsWith('イノーズ', pos + 1))) || (str.startsWith('ペ', pos + 0) && (str.startsWith('リッパー', pos + 1) || str.startsWith('ルシアン', pos + 1) || str.startsWith('ラップ', pos + 1))) || (str.startsWith('マ', pos + 0) && (str.startsWith('ダツボミ', pos + 1) || (str.startsWith('ン', pos + 1) && (str.startsWith('キー', pos + 2) || str.startsWith('タイン', pos + 2) || str.startsWith('ムー', pos + 2))) || (str.startsWith('ル', pos + 1) && (str.startsWith('ノーム', pos + 2) || str.startsWith('マイン', pos + 2))) || str.startsWith('タドガス', pos + 1) || (str.startsWith('グ', pos + 1) && (str.startsWith('カルゴ', pos + 2) || (str.startsWith('マ', pos + 2) && (str.startsWith('ッグ', pos + 3) || str.startsWith('ラシ', pos + 3))))) || (str.startsWith('リル', pos + 1) && (str.startsWith('', pos + 3) || str.startsWith('リ', pos + 3))) || str.startsWith('ッスグマ', pos + 1) || str.startsWith('ユルド', pos + 1) || str.startsWith('クノシタ', pos + 1) || str.startsWith('イナン', pos + 1) || str.startsWith('ネネ', pos + 1) || str.startsWith('スキッパ', pos + 1) || str.startsWith('ニューラ', pos + 1) || str.startsWith('ナフィ', pos + 1))) || (str.startsWith('ガ', pos + 0) && (str.startsWith('ラガラ', pos + 1) || (str.startsWith('ー', pos + 1) && (str.startsWith('ディ', pos + 2) || str.startsWith('メイル', pos + 2))) || str.startsWith('ルーラ', pos + 1) || str.startsWith('バイト', pos + 1) || str.startsWith('ブリアス', pos + 1))) || (str.startsWith('ウ', pos + 0) && (str.startsWith('インディ', pos + 1) || (str.startsWith('ツ', pos + 1) && (str.startsWith('ドン', pos + 2) || str.startsWith('ボット', pos + 2))) || (str.startsWith('ソ', pos + 1) && (str.startsWith('ッキー', pos + 2) || str.startsWith('ハチ', pos + 2))) || str.startsWith('パー', pos + 1) || str.startsWith('リムー', pos + 1))) || (str.startsWith('ケ', pos + 0) && (str.startsWith('ンタロス', pos + 1) || str.startsWith('ーシィ', pos + 1) || str.startsWith('ムッソ', pos + 1) || str.startsWith('ッキング', pos + 1) || str.startsWith('イコウオ', pos + 1))) || (str.startsWith('ユ', pos + 0) && (str.startsWith('レイドル', pos + 1) || str.startsWith('ンゲラー', pos + 1) || (str.startsWith('キ', pos + 1) && (str.startsWith('カブリ', pos + 2) || str.startsWith('ワラシ', pos + 2) || str.startsWith('ノオー', pos + 2) || str.startsWith('メノコ', pos + 2))) || str.startsWith('クシー', pos + 1))) || (str.startsWith('ワ', pos + 0) && (str.startsWith('ニノコ', pos + 1) || str.startsWith('ンリキー', pos + 1) || str.startsWith('タッコ', pos + 1) || str.startsWith('カシャモ', pos + 1))) || (str.startsWith('メ', pos + 0) && ((str.startsWith('タ', pos + 1) && (str.startsWith('モン', pos + 2) || str.startsWith('ング', pos + 2) || str.startsWith('グロス', pos + 2))) || str.startsWith('ノクラゲ', pos + 1) || (str.startsWith('ガ', pos + 1) && (str.startsWith('ニウム', pos + 2) || str.startsWith('ヤンマ', pos + 2))) || str.startsWith('リープ', pos + 1))) || (str.startsWith('ド', pos + 0) && ((str.startsWith('ク', pos + 1) && (str.startsWith('クラゲ', pos + 2) || str.startsWith('ケイル', pos + 2) || str.startsWith('ロッグ', pos + 2))) || (str.startsWith('ー', pos + 1) && ((str.startsWith('ド', pos + 2) && (str.startsWith('リオ', pos + 3) || str.startsWith('ー', pos + 3))) || str.startsWith('ブル', pos + 2) || str.startsWith('ミラー', pos + 2) || str.startsWith('タクン', pos + 2))) || str.startsWith('ガース', pos + 1) || (str.startsWith('ン', pos + 1) && (str.startsWith('ファン', pos + 2) || str.startsWith('メル', pos + 2) || str.startsWith('カラス', pos + 2))) || str.startsWith('ゴーム', pos + 1) || str.startsWith('ジョッチ', pos + 1) || str.startsWith('タイトス', pos + 1) || str.startsWith('ラピオン', pos + 1) || str.startsWith('サイドン', pos + 1))) || (str.startsWith('イ', pos + 0) && (str.startsWith('シツブテ', pos + 1) || str.startsWith('ワーク', pos + 1) || str.startsWith('ーブイ', pos + 1) || str.startsWith('トマル', pos + 1) || str.startsWith('ノムー', pos + 1) || str.startsWith('ルミーゼ', pos + 1))) || (str.startsWith('ギ', pos + 0) && ((str.startsWith('ャ', pos + 1) && (str.startsWith('ラドス', pos + 2) || str.startsWith('ロップ', pos + 2))) || str.startsWith('ラティナ', pos + 1))) || (str.startsWith('ヤ', pos + 0) && ((str.startsWith('ド', pos + 1) && (str.startsWith('ラン', pos + 2) || str.startsWith('ン', pos + 2) || str.startsWith('キング', pos + 2))) || str.startsWith('ンヤンマ', pos + 1) || (str.startsWith('ミ', pos + 1) && (str.startsWith('カラス', pos + 2) || str.startsWith('ラミ', pos + 2))) || str.startsWith('ルキモノ', pos + 1) || str.startsWith('ジロン', pos + 1))) || (str.startsWith('レ', pos + 0) && (str.startsWith('アコイル', pos + 1) || (str.startsWith('ディ', pos + 1) && (str.startsWith('アン', pos + 3) || str.startsWith('バ', pos + 3))) || (str.startsWith('ジ', pos + 1) && (str.startsWith('アイス', pos + 2) || str.startsWith('ロック', pos + 2) || str.startsWith('スチル', pos + 2) || str.startsWith('ギガス', pos + 2))) || str.startsWith('ックウザ', pos + 1) || str.startsWith('ントラー', pos + 1))) || (str.startsWith('ジ', pos + 0) && (str.startsWith('グザグマ', pos + 1) || (str.startsWith('ュ', pos + 1) && (str.startsWith('ゴン', pos + 2) || str.startsWith('プトル', pos + 2) || str.startsWith('カイン', pos + 2) || str.startsWith('ペッタ', pos + 2))) || str.startsWith('ーランス', pos + 1) || str.startsWith('ラーチ', pos + 1) || str.startsWith('バコイル', pos + 1))) || (str.startsWith('ベ', pos + 0) && ((str.startsWith('トベ', pos + 1) && (str.startsWith('ター', pos + 3) || str.startsWith('トン', pos + 3))) || (str.startsWith('ロ', pos + 1) && (str.startsWith('ベルト', pos + 2) || str.startsWith('リンガ', pos + 2))) || str.startsWith('イリーフ', pos + 1))) || (str.startsWith('シ', pos + 0) && ((str.startsWith('ェ', pos + 1) && (str.startsWith('イミ', pos + 2) || str.startsWith('ルダー', pos + 2))) || str.startsWith('ードラ', pos + 1) || str.startsWith('ャワーズ', pos + 1) || str.startsWith('ザリガー', pos + 1))) || str.startsWith('ゲンガー', pos + 0) || (str.startsWith('タ', pos + 0) && (str.startsWith('ッツー', pos + 1) || (str.startsWith('マ', pos + 1) && (str.startsWith('ザラシ', pos + 2) || str.startsWith('タマ', pos + 2) || str.startsWith('ンタ', pos + 2))) || str.startsWith('ネボー', pos + 1) || str.startsWith('ツベイ', pos + 1) || str.startsWith('テトプス', pos + 1))) || (str.startsWith('エ', pos + 0) && (str.startsWith('ビワラー', pos + 1) || (str.startsWith('レ', pos + 1) && ((str.startsWith('キ', pos + 2) && (str.startsWith('ッド', pos + 3) || str.startsWith('ブル', pos + 3))) || str.startsWith('ブー', pos + 2))) || str.startsWith('イパム', pos + 1) || str.startsWith('ーフィ', pos + 1) || str.startsWith('アームド', pos + 1) || (str.startsWith('ン', pos + 1) && (str.startsWith('テイ', pos + 2) || str.startsWith('ペルト', pos + 2))) || (str.startsWith('ネコ', pos + 1) && (str.startsWith('', pos + 3) || str.startsWith('ロロ', pos + 3))) || str.startsWith('テボース', pos + 1) || str.startsWith('ルレイド', pos + 1) || str.startsWith('ムリット', pos + 1))) || (str.startsWith('ル', pos + 0) && (str.startsWith('ギア', pos + 1) || str.startsWith('ージュラ', pos + 1) || str.startsWith('ンパッパ', pos + 1) || str.startsWith('リリ', pos + 1) || str.startsWith('ナトーン', pos + 1) || str.startsWith('クシオ', pos + 1) || str.startsWith('カリオ', pos + 1))) || (str.startsWith('ブ', pos + 0) && (str.startsWith('ラッキー', pos + 1) || (str.startsWith('ー', pos + 1) && (str.startsWith('スター', pos + 2) || (str.startsWith('バー', pos + 2) && (str.startsWith('', pos + 4) || str.startsWith('ン', pos + 4))) || str.startsWith('ピッグ', pos + 2))) || str.startsWith('ルー', pos + 1) || str.startsWith('ビィ', pos + 1) || str.startsWith('イゼル', pos + 1) || str.startsWith('ニャット', pos + 1))) || (str.startsWith('ミ', pos + 0) && (str.startsWith('ニリュウ', pos + 1) || (str.startsWith('ュウ', pos + 1) && (str.startsWith('', pos + 3) || str.startsWith('ツー', pos + 3))) || str.startsWith('ルタンク', pos + 1) || str.startsWith('ズゴロウ', pos + 1) || str.startsWith('ロカロス', pos + 1) || (str.startsWith('ノ', pos + 1) && (str.startsWith('マダム', pos + 2) || str.startsWith('ムッチ', pos + 2))) || str.startsWith('ツハニー', pos + 1) || (str.startsWith('ミロ', pos + 1) && (str.startsWith('ップ', pos + 3) || str.startsWith('ル', pos + 3))) || str.startsWith('カルゲ', pos + 1))) || (str.startsWith('ハ', pos + 0) && (str.startsWith('クリュー', pos + 1) || str.startsWith('ネッコ', pos + 1) || str.startsWith('ガネール', pos + 1) || (str.startsWith('リ', pos + 1) && (str.startsWith('テヤマ', pos + 2) || str.startsWith('ーセン', pos + 2))) || str.startsWith('ッサム', pos + 1) || str.startsWith('ピナス', pos + 1) || (str.startsWith('ス', pos + 1) && (str.startsWith('ブレロ', pos + 2) || str.startsWith('ボー', pos + 2))) || str.startsWith('ブネーク', pos + 1) || str.startsWith('ンテール', pos + 1) || str.startsWith('ヤシガメ', pos + 1))) || (str.startsWith('チ', pos + 0) && (str.startsWith('コリータ', pos + 1) || str.startsWith('ョンチー', pos + 1) || str.startsWith('ャーレム', pos + 1) || (str.startsWith('ル', pos + 1) && (str.startsWith('タリス', pos + 2) || str.startsWith('ット', pos + 2))) || str.startsWith('リーン', pos + 1) || (str.startsWith('ェリ', pos + 1) && (str.startsWith('ム', pos + 3) || str.startsWith('ンボ', pos + 3))))) || (str.startsWith('ホ', pos + 0) && (str.startsWith('ウオウ', pos + 1) || str.startsWith('ーホー', pos + 1) || (str.startsWith('エル', pos + 1) && (str.startsWith('オー', pos + 3) || str.startsWith('コ', pos + 3))))) || (str.startsWith('ヨ', pos + 0) && (str.startsWith('ルノズク', pos + 1) || str.startsWith('ーギラス', pos + 1) || str.startsWith('マワル', pos + 1) || str.startsWith('ノワール', pos + 1))) || (str.startsWith('ネ', pos + 0) && ((str.startsWith('イティ', pos + 1) && (str.startsWith('', pos + 4) || str.startsWith('オ', pos + 4))) || str.startsWith('ンドール', pos + 1) || str.startsWith('オラント', pos + 1))) || (str.startsWith('ヌ', pos + 0) && (str.startsWith('オー', pos + 1) || str.startsWith('マクロー', pos + 1) || str.startsWith('ケニン', pos + 1))) || (str.startsWith('ム', pos + 0) && ((str.startsWith('ウマ', pos + 1) && (str.startsWith('', pos + 3) || str.startsWith('ージ', pos + 3))) || str.startsWith('チュール', pos + 1) || str.startsWith('ックル', pos + 1) || (str.startsWith('ク', pos + 1) && (str.startsWith('バード', pos + 2) || str.startsWith('ホーク', pos + 2))))) || (str.startsWith('ソ', pos + 0) && (str.startsWith('ルロック', pos + 1) || (str.startsWith('ーナ', pos + 1) && (str.startsWith('ノ', pos + 3) || str.startsWith('ンス', pos + 3))))) || (str.startsWith('ノ', pos + 0) && (str.startsWith('コッチ', pos + 1) || str.startsWith('ズパス', pos + 1) || str.startsWith('クタス', pos + 1))) || (str.startsWith('グ', pos + 0) && ((str.startsWith('ラ', pos + 1) && ((str.startsWith('イ', pos + 2) && (str.startsWith('オン', pos + 3) || str.startsWith('ガー', pos + 3))) || str.startsWith('ンブル', pos + 2) || str.startsWith('エナ', pos + 2) || str.startsWith('ードン', pos + 2))) || (str.startsWith('レ', pos + 1) && (str.startsWith('イシア', pos + 2) || str.startsWith('ッグル', pos + 2))))) || (str.startsWith('ツ', pos + 0) && (str.startsWith('チニン', pos + 1) || str.startsWith('ボツボ', pos + 1))) || (str.startsWith('ヘ', pos + 0) && (str.startsWith('ラクロス', pos + 1) || str.startsWith('ルガー', pos + 1) || str.startsWith('イガニ', pos + 1))) || (str.startsWith('テッ', pos + 0) && (str.startsWith('カニン', pos + 2) || str.startsWith('ポウオ', pos + 2))) || str.startsWith('セレビィ', pos + 0) || (str.startsWith('ボ', pos + 0) && (str.startsWith('スゴドラ', pos + 1) || str.startsWith('ーマンダ', pos + 1))) || str.startsWith('ザングース', pos + 0))) {return true;} } return false; }
+module.exports=function(orig_str){
+  let str = new Array(orig_str.length);
+  for(let i=0;i<orig_str.length;i++) {
+    str[i] = orig_str.charCodeAt(i);
+  }
+  for(let pos = 0; pos < str.length; pos++) {
+    if(str[pos] === 12501) {
+      if(str[pos + 1] === 12471 && str[pos + 2] === 12462) {
+        if(str[pos] === 12477 && str[pos + 1] === 12454) return true;
+        if(str[pos] === 12480 && str[pos + 1] === 12493) return true;
+        if(str[pos] === 12496 && str[pos + 1] === 12490) return true;
+        continue;
+      }
+      if(str[pos] === 12540 && str[pos + 1] === 12487 && str[pos + 2] === 12451 && str[pos + 3] === 12531) return true;
+      if(str[pos] === 12522 && str[pos + 1] === 12540 && str[pos + 2] === 12470 && str[pos + 3] === 12540) return true;
+      if(str[pos] === 12449 && str[pos + 1] === 12452 && str[pos + 2] === 12516 && str[pos + 3] === 12540) return true;
+      if(str[pos] === 12457 && str[pos + 1] === 12524 && str[pos + 2] === 12488 && str[pos + 3] === 12473) return true;
+      if(str[pos] === 12521 && str[pos + 1] === 12452 && str[pos + 2] === 12468 && str[pos + 3] === 12531) return true;
+      if(str[pos] === 12525 && str[pos + 1] === 12540 && str[pos + 2] === 12476 && str[pos + 3] === 12523) return true;
+      if(str[pos + 1] === 12527) {
+        if(str[pos] === 12521 && str[pos + 1] === 12452 && str[pos + 2] === 12489) return true;
+        if(str[pos] === 12531 && str[pos + 1] === 12486) return true;
+        continue;
+      }
+      if(str[pos] === 12459 && str[pos + 1] === 12510 && str[pos + 2] === 12523) return true;
+      if(str[pos] === 12451 && str[pos + 1] === 12458 && str[pos + 2] === 12493) return true;
+      continue;
+    }
+    if(str[pos] === 12498) {
+      if(str[pos + 1] === 12488) {
+        if(str[pos] === 12459 && str[pos + 1] === 12466) return true;
+        if(str[pos] === 12487 && str[pos + 1] === 12510 && str[pos + 2] === 12531) return true;
+        continue;
+      }
+      if(str[pos] === 12494 && str[pos + 1] === 12450 && str[pos + 2] === 12521 && str[pos + 3] === 12471) return true;
+      if(str[pos] === 12510 && str[pos + 1] === 12490 && str[pos + 2] === 12483 && str[pos + 3] === 12484) return true;
+      if(str[pos] === 12513 && str[pos + 1] === 12464 && str[pos + 2] === 12510) return true;
+      if(str[pos] === 12531 && str[pos + 1] === 12496 && str[pos + 2] === 12473) return true;
+      if(str[pos] === 12467 && str[pos + 1] === 12470 && str[pos + 2] === 12523) return true;
+      if(str[pos] === 12509 && str[pos + 1] === 12509 && str[pos + 2] === 12479 && str[pos + 3] === 12473) return true;
+      if(str[pos] === 12540 && str[pos + 1] === 12489 && str[pos + 2] === 12521 && str[pos + 3] === 12531) return true;
+      continue;
+    }
+    if(str[pos] === 12522) {
+      if(str[pos + 1] === 12470 && str[pos + 2] === 12540 && str[pos + 3] === 12489) {
+        return true;
+        if(str[pos] === 12531) return true;
+        continue;
+      }
+      if(str[pos] === 12531 && str[pos + 1] === 12464 && str[pos + 2] === 12510) return true;
+      if(str[pos] === 12522 && str[pos + 1] === 12540 && str[pos + 2] === 12521) return true;
+      if(str[pos + 1] === 12540) {
+        if(str[pos] === 12471 && str[pos + 1] === 12515 && str[pos + 2] === 12531) return true;
+        if(str[pos] === 12501 && str[pos + 1] === 12451 && str[pos + 2] === 12450) return true;
+        continue;
+      }
+      if(str[pos] === 12458 && str[pos + 1] === 12523) return true;
+      continue;
+    }
+    if(str[pos] === 12476 && str[pos + 1] === 12491 && str[pos + 2] === 12460 && str[pos + 3] === 12513) return true;
+    if(str[pos] === 12459) {
+      if(str[pos + 1] === 12452) {
+        if(str[pos + 2] === 12522) {
+          if(str[pos] === 12461 && str[pos + 1] === 12540) return true;
+          if(str[pos] === 12517 && str[pos + 1] === 12540) return true;
+          continue;
+        }
+        if(str[pos] === 12525 && str[pos + 1] === 12473) return true;
+        if(str[pos] === 12458 && str[pos + 1] === 12540 && str[pos + 2] === 12460) return true;
+        continue;
+      }
+      if(str[pos + 1] === 12513) {
+        if(str[pos] === 12483 && str[pos + 1] === 12463 && str[pos + 2] === 12473) return true;
+        if(str[pos] === 12540 && str[pos + 1] === 12523) return true;
+        continue;
+      }
+      if(str[pos] === 12514 && str[pos + 1] === 12493 && str[pos + 2] === 12462) return true;
+      if(str[pos + 1] === 12521) {
+        if(str[pos] === 12459 && str[pos + 1] === 12521) return true;
+        if(str[pos] === 12469 && str[pos + 1] === 12522 && str[pos + 2] === 12473) return true;
+        if(str[pos] === 12490 && str[pos + 1] === 12463 && str[pos + 2] === 12471) return true;
+        continue;
+      }
+      if(str[pos + 1] === 12502 && str[pos + 2] === 12488) {
+        return true;
+        if(str[pos] === 12503 && str[pos + 1] === 12473) return true;
+        continue;
+      }
+      if(str[pos] === 12499 && str[pos + 1] === 12468 && str[pos + 2] === 12531) return true;
+      if(str[pos] === 12509 && str[pos + 1] === 12456 && str[pos + 2] === 12521 && str[pos + 3] === 12540) return true;
+      if(str[pos] === 12463 && str[pos + 1] === 12524 && str[pos + 2] === 12458 && str[pos + 3] === 12531) return true;
+      if(str[pos] === 12466 && str[pos + 1] === 12508 && str[pos + 2] === 12454 && str[pos + 3] === 12474) return true;
+      if(str[pos] === 12496 && str[pos + 1] === 12523 && str[pos + 2] === 12489 && str[pos + 3] === 12531) return true;
+      continue;
+    }
+    if(str[pos] === 12461) {
+      if(str[pos + 1] === 12515) {
+        if(str[pos] === 12479 && str[pos + 1] === 12500 && str[pos + 2] === 12540) return true;
+        if(str[pos] === 12514 && str[pos + 1] === 12513) return true;
+        continue;
+      }
+      if(str[pos] === 12517 && str[pos + 1] === 12454 && str[pos + 2] === 12467 && str[pos + 3] === 12531) return true;
+      if(str[pos + 1] === 12531 && str[pos + 2] === 12464) {
+        if(str[pos] === 12489 && str[pos + 1] === 12521) return true;
+        if(str[pos] === 12521 && str[pos + 1] === 12540) return true;
+        continue;
+      }
+      if(str[pos] === 12524 && str[pos + 1] === 12452 && str[pos + 2] === 12495 && str[pos + 3] === 12490) return true;
+      if(str[pos] === 12510 && str[pos + 1] === 12527 && str[pos + 2] === 12522) return true;
+      if(str[pos] === 12522 && str[pos + 1] === 12531 && str[pos + 2] === 12522 && str[pos + 3] === 12461) return true;
+      if(str[pos] === 12514 && str[pos + 1] === 12522) return true;
+      if(str[pos] === 12523 && str[pos + 1] === 12522 && str[pos + 2] === 12450) return true;
+      if(str[pos + 1] === 12494) {
+        if(str[pos] === 12460 && str[pos + 1] === 12483 && str[pos + 2] === 12469) return true;
+        if(str[pos] === 12467 && str[pos + 1] === 12467) return true;
+        continue;
+      }
+      if(str[pos] === 12496 && str[pos + 1] === 12491 && str[pos + 2] === 12450) return true;
+      continue;
+    }
+    if(str[pos] === 12488) {
+      if(str[pos] === 12469 && str[pos + 1] === 12461 && str[pos + 2] === 12531 && str[pos + 3] === 12488) return true;
+      if(str[pos] === 12521 && str[pos + 1] === 12531 && str[pos + 2] === 12475 && str[pos + 3] === 12523) return true;
+      if(str[pos + 1] === 12466) {
+        if(str[pos] === 12481 && str[pos + 1] === 12483 && str[pos + 2] === 12463) return true;
+        if(str[pos] === 12500 && str[pos + 1] === 12540) return true;
+        if(str[pos] === 12461 && str[pos + 1] === 12483 && str[pos + 2] === 12473) return true;
+        continue;
+      }
+      if(str[pos] === 12525 && str[pos + 1] === 12500 && str[pos + 2] === 12454 && str[pos + 3] === 12473) return true;
+      if(str[pos + 1] === 12489) {
+        if(str[pos] === 12464 && str[pos + 1] === 12521 && str[pos + 2] === 12540) return true;
+        if(str[pos] === 12476 && str[pos + 1] === 12523 && str[pos + 2] === 12460) return true;
+        continue;
+      }
+      if(str[pos + 1] === 12522) {
+        if(str[pos] === 12487 && str[pos + 1] === 12503 && str[pos + 2] === 12473) return true;
+        if(str[pos] === 12488 && str[pos + 1] === 12489 && str[pos + 2] === 12531) return true;
+        continue;
+      }
+      continue;
+    }
+    if(str[pos] === 12496) {
+      if(str[pos] === 12479 && str[pos + 1] === 12501 && str[pos + 2] === 12522 && str[pos + 3] === 12540) return true;
+      if(str[pos] === 12522 && str[pos + 1] === 12516 && str[pos + 2] === 12540 && str[pos + 3] === 12489) return true;
+      if(str[pos + 1] === 12463) {
+        if(str[pos] === 12458 && str[pos + 1] === 12531 && str[pos + 2] === 12464) return true;
+        if(str[pos] === 12501 && str[pos + 1] === 12540 && str[pos + 2] === 12531) return true;
+        if(str[pos] === 12540 && str[pos + 1] === 12480) return true;
+        continue;
+      }
+      if(str[pos + 1] === 12523) {
+        if(str[pos] === 12461 && str[pos + 1] === 12540) return true;
+        if(str[pos] === 12499 && str[pos + 1] === 12540 && str[pos + 2] === 12488) return true;
+        continue;
+      }
+      if(str[pos] === 12531 && str[pos + 1] === 12462 && str[pos + 2] === 12521 && str[pos + 3] === 12473) return true;
+      if(str[pos] === 12471 && str[pos + 1] === 12515 && str[pos + 2] === 12540 && str[pos + 3] === 12514) return true;
+      if(str[pos] === 12493 && str[pos + 1] === 12502 && str[pos + 2] === 12540) return true;
+      continue;
+    }
+    if(str[pos] === 12499) {
+      if(str[pos] === 12522 && str[pos + 1] === 12522 && str[pos + 2] === 12480 && str[pos + 3] === 12510) return true;
+      if(str[pos + 1] === 12540) {
+        if(str[pos] === 12480 && str[pos + 1] === 12523) return true;
+        if(str[pos] === 12489 && str[pos + 1] === 12523) return true;
+        if(str[pos] === 12463 && str[pos + 1] === 12452 && str[pos + 2] === 12531) return true;
+        continue;
+      }
+      if(str[pos] === 12502 && str[pos + 1] === 12521 && str[pos + 2] === 12540 && str[pos + 3] === 12496) return true;
+      if(str[pos] === 12483 && str[pos + 1] === 12497) return true;
+      continue;
+    }
+    if(str[pos] === 12467) {
+      if(str[pos] === 12463 && str[pos + 1] === 12540 && str[pos + 2] === 12531) return true;
+      if(str[pos] === 12521 && str[pos + 1] === 12483 && str[pos + 2] === 12479) return true;
+      if(str[pos] === 12531 && str[pos + 1] === 12497 && str[pos + 2] === 12531) return true;
+      if(str[pos] === 12480 && str[pos + 1] === 12483 && str[pos + 2] === 12463) return true;
+      if(str[pos + 1] === 12452) {
+        if(str[pos] === 12461 && str[pos + 1] === 12531 && str[pos + 2] === 12464) return true;
+        if(str[pos] === 12523) return true;
+        continue;
+      }
+      if(str[pos] === 12494 && str[pos + 1] === 12495 && str[pos + 2] === 12490) return true;
+      if(str[pos] === 12467 && str[pos + 1] === 12489 && str[pos + 2] === 12521) return true;
+      if(str[pos] === 12489 && str[pos + 1] === 12521) return true;
+      if(str[pos] === 12540 && str[pos + 1] === 12479 && str[pos + 2] === 12473) return true;
+      if(str[pos] === 12514 && str[pos + 1] === 12523 && str[pos + 2] === 12540) return true;
+      if(str[pos + 1] === 12525) {
+        if(str[pos] === 12488 && str[pos + 1] === 12483 && str[pos + 2] === 12463) return true;
+        if(str[pos] === 12508 && str[pos + 1] === 12540 && str[pos + 2] === 12471) return true;
+        continue;
+      }
+      if(str[pos] === 12522 && str[pos + 1] === 12531 && str[pos + 2] === 12463) return true;
+      continue;
+    }
+    if(str[pos] === 12473) {
+      if(str[pos] === 12500 && str[pos + 1] === 12450 && str[pos + 2] === 12540) return true;
+      if(str[pos + 1] === 12522 && str[pos + 2] === 12540) {
+        if(str[pos] === 12497 && str[pos + 1] === 12540) return true;
+        if(str[pos] === 12503) return true;
+        continue;
+      }
+      if(str[pos] === 12479 && str[pos + 1] === 12540 && str[pos + 2] === 12511 && str[pos + 3] === 12540) return true;
+      if(str[pos] === 12488 && str[pos + 1] === 12521 && str[pos + 2] === 12452 && str[pos + 3] === 12463) return true;
+      if(str[pos] === 12452 && str[pos + 1] === 12463 && str[pos + 2] === 12531) return true;
+      if(str[pos] === 12496 && str[pos + 1] === 12513) return true;
+      if(str[pos] === 12508 && str[pos + 1] === 12511 && str[pos + 2] === 12540) return true;
+      if(str[pos + 1] === 12459) {
+        if(str[pos] === 12479 && str[pos + 1] === 12531 && str[pos + 2] === 12463) return true;
+        if(str[pos] === 12531 && str[pos + 1] === 12503 && str[pos + 2] === 12540) return true;
+        continue;
+      }
+      if(str[pos] === 12467 && str[pos + 1] === 12523 && str[pos + 2] === 12500) return true;
+      continue;
+    }
+    if(str[pos] === 12509) {
+      if(str[pos + 1] === 12483) {
+        if(str[pos] === 12481 && str[pos + 1] === 12515 && str[pos + 2] === 12510) return true;
+        if(str[pos] === 12509) return true;
+        if(str[pos] === 12479 && str[pos + 1] === 12452 && str[pos + 2] === 12471) return true;
+        continue;
+      }
+      if(str[pos] === 12491 && str[pos + 1] === 12540 && str[pos + 2] === 12479) return true;
+      if(str[pos + 1] === 12522 && str[pos + 2] === 12468 && str[pos + 3] === 12531) {
+        return true;
+        if(str[pos] === 50) return true;
+        if(str[pos] === 90) return true;
+        continue;
+      }
+      if(str[pos] === 12509 && str[pos + 1] === 12483 && str[pos + 2] === 12467) return true;
+      if(str[pos] === 12481 && str[pos + 1] === 12456 && str[pos + 2] === 12490) return true;
+      if(str[pos] === 12527 && str[pos + 1] === 12523 && str[pos + 2] === 12531) return true;
+      continue;
+    }
+    if(str[pos] === 12500) {
+      if(str[pos] === 12459 && str[pos + 1] === 12481 && str[pos + 2] === 12517 && str[pos + 3] === 12454) return true;
+      if(str[pos + 1] === 12472 && str[pos + 2] === 12519) {
+        if(str[pos] === 12483 && str[pos + 1] === 12488) return true;
+        if(str[pos] === 12531) return true;
+        continue;
+      }
+      if(str[pos] === 12483 && str[pos + 1] === 12500) return true;
+      if(str[pos] === 12463 && str[pos + 1] === 12471 && str[pos + 2] === 12540) return true;
+      if(str[pos] === 12481 && str[pos + 1] === 12517 && str[pos + 2] === 12540) return true;
+      if(str[pos] === 12451) return true;
+      if(str[pos] === 12531 && str[pos + 1] === 12503 && str[pos + 2] === 12463) return true;
+      continue;
+    }
+    if(str[pos] === 12521) {
+      if(str[pos + 1] === 12452) {
+        if(str[pos] === 12467 && str[pos + 1] === 12454) return true;
+        if(str[pos] === 12481 && str[pos + 1] === 12517 && str[pos + 2] === 12454) return true;
+        if(str[pos] === 12508 && str[pos + 1] === 12523 && str[pos + 2] === 12488) return true;
+        continue;
+      }
+      if(str[pos + 1] === 12483) {
+        if(str[pos] === 12461 && str[pos + 1] === 12540) return true;
+        if(str[pos] === 12479) return true;
+        continue;
+      }
+      if(str[pos] === 12501 && str[pos + 1] === 12524 && str[pos + 2] === 12471 && str[pos + 3] === 12450) return true;
+      if(str[pos] === 12503 && str[pos + 1] === 12521 && str[pos + 2] === 12473) return true;
+      if(str[pos] === 12531 && str[pos + 1] === 12479 && str[pos + 2] === 12540 && str[pos + 3] === 12531) return true;
+      if(str[pos] === 12464 && str[pos + 1] === 12521 && str[pos + 2] === 12540 && str[pos + 3] === 12472) return true;
+      if(str[pos] === 12523 && str[pos + 1] === 12488 && str[pos + 2] === 12473) return true;
+      if(str[pos] === 12463 && str[pos + 1] === 12521 && str[pos + 2] === 12452) return true;
+      if(str[pos] === 12502 && str[pos + 1] === 12459 && str[pos + 2] === 12473) return true;
+      if(str[pos + 1] === 12486 && str[pos + 2] === 12451) {
+        if(str[pos] === 12450 && str[pos + 1] === 12473) return true;
+        if(str[pos] === 12458 && str[pos + 1] === 12473) return true;
+        continue;
+      }
+      if(str[pos] === 12512 && str[pos + 1] === 12497 && str[pos + 2] === 12523 && str[pos + 3] === 12489) return true;
+      continue;
+    }
+    if(str[pos] === 12458) {
+      if(str[pos] === 12467 && str[pos + 1] === 12522 && str[pos + 2] === 12470 && str[pos + 3] === 12523) return true;
+      if(str[pos + 1] === 12491) {
+        if(str[pos] === 12473 && str[pos + 1] === 12474 && str[pos + 2] === 12513) return true;
+        if(str[pos] === 12489 && str[pos + 1] === 12522 && str[pos + 2] === 12523) return true;
+        if(str[pos] === 12468 && str[pos + 1] === 12540 && str[pos + 2] === 12522) return true;
+        continue;
+      }
+      if(str[pos + 1] === 12512) {
+        if(str[pos] === 12473 && str[pos + 1] === 12479 && str[pos + 2] === 12540) return true;
+        if(str[pos] === 12490 && str[pos + 1] === 12452 && str[pos + 2] === 12488) return true;
+        continue;
+      }
+      if(str[pos] === 12540 && str[pos + 1] === 12480 && str[pos + 2] === 12452 && str[pos + 3] === 12523) return true;
+      if(str[pos] === 12479 && str[pos + 1] === 12481) return true;
+      if(str[pos + 1] === 12458) {
+        if(str[pos] === 12473 && str[pos + 1] === 12496 && str[pos + 2] === 12513) return true;
+        if(str[pos] === 12479 && str[pos + 1] === 12481) return true;
+        continue;
+      }
+      if(str[pos] === 12463 && str[pos + 1] === 12479 && str[pos + 2] === 12531) return true;
+      if(str[pos] === 12489 && str[pos + 1] === 12471 && str[pos + 2] === 12471) return true;
+      continue;
+    }
+    if(str[pos] === 12450) {
+      if(str[pos] === 12474 && str[pos + 1] === 12510 && str[pos + 2] === 12458 && str[pos + 3] === 12454) return true;
+      if(str[pos + 1] === 12540) {
+        if(str[pos + 2] === 12508) {
+          return true;
+          if(str[pos] === 12483 && str[pos + 1] === 12463) return true;
+          continue;
+        }
+        if(str[pos] === 12510 && str[pos + 1] === 12523 && str[pos + 2] === 12489) return true;
+        continue;
+      }
+      if(str[pos + 1] === 12522) {
+        if(str[pos] === 12450 && str[pos + 1] === 12489 && str[pos + 2] === 12473) return true;
+        if(str[pos] === 12466 && str[pos + 1] === 12452 && str[pos + 2] === 12484) return true;
+        continue;
+      }
+      if(str[pos] === 12531 && str[pos + 1] === 12494 && str[pos + 2] === 12540 && str[pos + 3] === 12531) return true;
+      if(str[pos] === 12481 && str[pos + 1] === 12515 && str[pos + 2] === 12514) return true;
+      if(str[pos] === 12466 && str[pos + 1] === 12495 && str[pos + 2] === 12531 && str[pos + 3] === 12488) return true;
+      if(str[pos + 1] === 12513) {
+        if(str[pos] === 12479 && str[pos + 1] === 12510) return true;
+        if(str[pos] === 12514 && str[pos + 1] === 12540 && str[pos + 2] === 12473) return true;
+        continue;
+      }
+      if(str[pos] === 12469 && str[pos + 1] === 12490 && str[pos + 2] === 12531) return true;
+      if(str[pos] === 12494 && str[pos + 1] === 12503 && str[pos + 2] === 12473) return true;
+      if(str[pos] === 12502 && str[pos + 1] === 12477 && str[pos + 2] === 12523) return true;
+      if(str[pos] === 12464 && str[pos + 1] === 12494 && str[pos + 2] === 12512) return true;
+      if(str[pos] === 12523 && str[pos + 1] === 12475 && str[pos + 2] === 12454 && str[pos + 3] === 12473) return true;
+      continue;
+    }
+    if(str[pos] === 12469) {
+      if(str[pos] === 12527 && str[pos + 1] === 12512 && str[pos + 2] === 12521 && str[pos + 3] === 12540) return true;
+      if(str[pos + 1] === 12531) {
+        if(str[pos + 2] === 12480 && str[pos + 3] === 12540) {
+          return true;
+          if(str[pos] === 12473) return true;
+          continue;
+        }
+        if(str[pos + 2] === 12489) {
+          return true;
+          if(str[pos] === 12497 && str[pos + 1] === 12531) return true;
+          continue;
+        }
+        continue;
+      }
+      if(str[pos + 1] === 12452) {
+        if(str[pos] === 12489 && str[pos + 1] === 12531) return true;
+        if(str[pos] === 12507 && str[pos + 1] === 12540 && str[pos + 2] === 12531) return true;
+        continue;
+      }
+      if(str[pos] === 12491 && str[pos + 1] === 12540 && str[pos + 2] === 12468) return true;
+      if(str[pos] === 12490 && str[pos + 1] === 12462 && str[pos + 2] === 12521 && str[pos + 3] === 12473) return true;
+      if(str[pos] === 12540 && str[pos + 1] === 12490 && str[pos + 2] === 12452 && str[pos + 3] === 12488) return true;
+      if(str[pos] === 12513 && str[pos + 1] === 12495 && str[pos + 2] === 12480 && str[pos + 3] === 12540) return true;
+      if(str[pos] === 12508 && str[pos + 1] === 12493 && str[pos + 2] === 12450) return true;
+      if(str[pos] === 12510 && str[pos + 1] === 12520 && str[pos + 2] === 12540 && str[pos + 3] === 12523) return true;
+      if(str[pos] === 12463 && str[pos + 1] === 12521 && str[pos + 2] === 12499 && str[pos + 3] === 12473) return true;
+      continue;
+    }
+    if(str[pos] === 12491) {
+      if(str[pos + 1] === 12489) {
+        if(str[pos + 2] === 12521 && str[pos + 3] === 12531) {
+          if(str[pos] === 9792) return true;
+          if(str[pos] === 9794) return true;
+          continue;
+        }
+        if(str[pos + 2] === 12522 && str[pos + 3] === 12540) {
+          if(str[pos] === 12490) return true;
+          if(str[pos] === 12494) return true;
+          continue;
+        }
+        if(str[pos] === 12463 && str[pos + 1] === 12452 && str[pos + 2] === 12531) return true;
+        if(str[pos] === 12461 && str[pos + 1] === 12531 && str[pos + 2] === 12464) return true;
+        continue;
+      }
+      if(str[pos + 1] === 12515) {
+        if(str[pos] === 12523 && str[pos + 1] === 12510 && str[pos + 2] === 12540) return true;
+        if(str[pos] === 12540 && str[pos + 1] === 12473) return true;
+        continue;
+      }
+      if(str[pos + 1] === 12519 && str[pos + 2] === 12525) {
+        if(str[pos] === 12478) return true;
+        if(str[pos] === 12514) return true;
+        if(str[pos] === 12508 && str[pos + 1] === 12531) return true;
+        if(str[pos] === 12488 && str[pos + 1] === 12494) return true;
+        continue;
+      }
+      if(str[pos] === 12517 && str[pos + 1] === 12540 && str[pos + 2] === 12521) return true;
+      continue;
+    }
+    if(str[pos] === 12525) {
+      if(str[pos] === 12467 && str[pos + 1] === 12531) return true;
+      if(str[pos] === 12476 && str[pos + 1] === 12522 && str[pos + 2] === 12450) return true;
+      if(str[pos] === 12474 && str[pos + 1] === 12524 && str[pos + 2] === 12452 && str[pos + 3] === 12489) return true;
+      if(str[pos] === 12488 && str[pos + 1] === 12512) return true;
+      continue;
+    }
+    if(str[pos] === 12503) {
+      if(str[pos] === 12463 && str[pos + 1] === 12522 && str[pos + 2] === 12531) return true;
+      if(str[pos] === 12522 && str[pos + 1] === 12531) return true;
+      if(str[pos] === 12486 && str[pos + 1] === 12521) return true;
+      if(str[pos] === 12503 && str[pos + 1] === 12522 && str[pos + 2] === 12531) return true;
+      if(str[pos] === 12521 && str[pos + 1] === 12473 && str[pos + 2] === 12523) return true;
+      continue;
+    }
+    if(str[pos] === 12474) {
+      if(str[pos] === 12460 && str[pos + 1] === 12452 && str[pos + 2] === 12489 && str[pos + 3] === 12473) return true;
+      if(str[pos] === 12496 && str[pos + 1] === 12483 && str[pos + 2] === 12488) return true;
+      continue;
+    }
+    if(str[pos] === 12468) {
+      if(str[pos + 1] === 12523) {
+        if(str[pos] === 12480 && str[pos + 1] === 12483 && str[pos + 2] === 12463) return true;
+        if(str[pos] === 12496 && str[pos + 1] === 12483 && str[pos + 2] === 12488) return true;
+        continue;
+      }
+      if(str[pos + 1] === 12540) {
+        if(str[pos + 2] === 12473) {
+          return true;
+          if(str[pos] === 12488) return true;
+          continue;
+        }
+        if(str[pos] === 12522 && str[pos + 1] === 12461 && str[pos + 2] === 12540) return true;
+        continue;
+      }
+      if(str[pos + 1] === 12525 && str[pos + 2] === 12540) {
+        if(str[pos] === 12491 && str[pos + 1] === 12515) return true;
+        if(str[pos] === 12531) return true;
+        continue;
+      }
+      if(str[pos] === 12510 && str[pos + 1] === 12478 && str[pos + 2] === 12454) return true;
+      if(str[pos] === 12491 && str[pos + 1] === 12519 && str[pos + 2] === 12491 && str[pos + 3] === 12519) return true;
+      if(str[pos] === 12463 && str[pos + 1] === 12522 && str[pos + 2] === 12531) return true;
+      if(str[pos] === 12454 && str[pos + 1] === 12459 && str[pos + 2] === 12470 && str[pos + 3] === 12523) return true;
+      if(str[pos] === 12531 && str[pos + 1] === 12505) return true;
+      continue;
+    }
+    if(str[pos] === 12490) {
+      if(str[pos] === 12478 && str[pos + 1] === 12494 && str[pos + 2] === 12463 && str[pos + 3] === 12469) return true;
+      if(str[pos + 1] === 12483) {
+        if(str[pos] === 12463 && str[pos + 1] === 12521 && str[pos + 2] === 12540) return true;
+        if(str[pos] === 12471 && str[pos + 1] === 12540) return true;
+        continue;
+      }
+      if(str[pos + 1] === 12510) {
+        if(str[pos] === 12465 && str[pos + 1] === 12525) return true;
+        if(str[pos] === 12474 && str[pos + 1] === 12531) return true;
+        continue;
+      }
+      if(str[pos] === 12456 && str[pos + 1] === 12488 && str[pos + 2] === 12523) return true;
+      continue;
+    }
+    if(str[pos] === 12463) {
+      if(str[pos] === 12469 && str[pos + 1] === 12452 && str[pos + 2] === 12495 && str[pos + 3] === 12490) return true;
+      if(str[pos] === 12521 && str[pos + 1] === 12502) return true;
+      if(str[pos] === 12525 && str[pos + 1] === 12496 && str[pos + 2] === 12483 && str[pos + 3] === 12488) return true;
+      if(str[pos] === 12492 && str[pos + 1] === 12462 && str[pos + 2] === 12480 && str[pos + 3] === 12510) return true;
+      if(str[pos] === 12481 && str[pos + 1] === 12540 && str[pos + 2] === 12488) return true;
+      if(str[pos] === 12524 && str[pos + 1] === 12475 && str[pos + 2] === 12522 && str[pos + 3] === 12450) return true;
+      continue;
+    }
+    if(str[pos] === 12497) {
+      if(str[pos] === 12454 && str[pos + 1] === 12527 && str[pos + 2] === 12454) return true;
+      if(str[pos + 1] === 12521) {
+        if(str[pos] === 12473) return true;
+        if(str[pos] === 12475 && str[pos + 1] === 12463 && str[pos + 2] === 12488) return true;
+        continue;
+      }
+      if(str[pos + 1] === 12523) {
+        if(str[pos] === 12461 && str[pos + 1] === 12450) return true;
+        if(str[pos] === 12471 && str[pos + 1] === 12455 && str[pos + 2] === 12531) return true;
+        continue;
+      }
+      if(str[pos] === 12483 && str[pos + 1] === 12481 && str[pos + 2] === 12540 && str[pos + 3] === 12523) return true;
+      if(str[pos] === 12540 && str[pos + 1] === 12523 && str[pos + 2] === 12523) return true;
+      if(str[pos] === 12481 && str[pos + 1] === 12522 && str[pos + 2] === 12473) return true;
+      continue;
+    }
+    if(str[pos] === 12514) {
+      if(str[pos] === 12523 && str[pos + 1] === 12501 && str[pos + 2] === 12457 && str[pos + 3] === 12531) return true;
+      if(str[pos] === 12531 && str[pos + 1] === 12472 && str[pos + 2] === 12515 && str[pos + 3] === 12521) return true;
+      if(str[pos] === 12467 && str[pos + 1] === 12467) return true;
+      if(str[pos] === 12454 && str[pos + 1] === 12459 && str[pos + 2] === 12470 && str[pos + 3] === 12523) return true;
+      if(str[pos] === 12472 && str[pos + 1] === 12515 && str[pos + 2] === 12531 && str[pos + 3] === 12508) return true;
+      continue;
+    }
+    if(str[pos] === 12487) {
+      if(str[pos + 1] === 12451) {
+        if(str[pos] === 12450 && str[pos + 1] === 12523 && str[pos + 2] === 12460) return true;
+        if(str[pos] === 12464 && str[pos + 1] === 12480) return true;
+        continue;
+      }
+      if(str[pos] === 12531 && str[pos + 1] === 12522 && str[pos + 2] === 12517 && str[pos + 3] === 12454) return true;
+      if(str[pos] === 12522 && str[pos + 1] === 12496 && str[pos + 2] === 12540 && str[pos + 3] === 12489) return true;
+      if(str[pos] === 12523 && str[pos + 1] === 12499 && str[pos + 2] === 12523) return true;
+      if(str[pos] === 12458 && str[pos + 1] === 12461 && str[pos + 2] === 12471 && str[pos + 3] === 12473) return true;
+      continue;
+    }
+    if(str[pos] === 12480) {
+      if(str[pos] === 12464 && str[pos + 1] === 12488 && str[pos + 2] === 12522 && str[pos + 3] === 12458) return true;
+      if(str[pos + 1] === 12540) {
+        if(str[pos] === 12463 && str[pos + 1] === 12521 && str[pos + 2] === 12452) return true;
+        if(str[pos] === 12486 && str[pos + 1] === 12531 && str[pos + 2] === 12464) return true;
+        continue;
+      }
+      if(str[pos] === 12531 && str[pos + 1] === 12496 && str[pos + 2] === 12523) return true;
+      if(str[pos] === 12452 && str[pos + 1] === 12494 && str[pos + 2] === 12540 && str[pos + 3] === 12474) return true;
+      continue;
+    }
+    if(str[pos] === 12506) {
+      if(str[pos] === 12522 && str[pos + 1] === 12483 && str[pos + 2] === 12497 && str[pos + 3] === 12540) return true;
+      if(str[pos] === 12523 && str[pos + 1] === 12471 && str[pos + 2] === 12450 && str[pos + 3] === 12531) return true;
+      if(str[pos] === 12521 && str[pos + 1] === 12483 && str[pos + 2] === 12503) return true;
+      continue;
+    }
+    if(str[pos] === 12510) {
+      if(str[pos] === 12480 && str[pos + 1] === 12484 && str[pos + 2] === 12508 && str[pos + 3] === 12511) return true;
+      if(str[pos + 1] === 12531) {
+        if(str[pos] === 12461 && str[pos + 1] === 12540) return true;
+        if(str[pos] === 12479 && str[pos + 1] === 12452 && str[pos + 2] === 12531) return true;
+        if(str[pos] === 12512 && str[pos + 1] === 12540) return true;
+        continue;
+      }
+      if(str[pos + 1] === 12523) {
+        if(str[pos] === 12494 && str[pos + 1] === 12540 && str[pos + 2] === 12512) return true;
+        if(str[pos] === 12510 && str[pos + 1] === 12452 && str[pos + 2] === 12531) return true;
+        continue;
+      }
+      if(str[pos] === 12479 && str[pos + 1] === 12489 && str[pos + 2] === 12460 && str[pos + 3] === 12473) return true;
+      if(str[pos + 1] === 12464) {
+        if(str[pos] === 12459 && str[pos + 1] === 12523 && str[pos + 2] === 12468) return true;
+        if(str[pos + 2] === 12510) {
+          if(str[pos] === 12483 && str[pos + 1] === 12464) return true;
+          if(str[pos] === 12521 && str[pos + 1] === 12471) return true;
+          continue;
+        }
+        continue;
+      }
+      if(str[pos + 1] === 12522 && str[pos + 2] === 12523) {
+        return true;
+        if(str[pos] === 12522) return true;
+        continue;
+      }
+      if(str[pos] === 12483 && str[pos + 1] === 12473 && str[pos + 2] === 12464 && str[pos + 3] === 12510) return true;
+      if(str[pos] === 12518 && str[pos + 1] === 12523 && str[pos + 2] === 12489) return true;
+      if(str[pos] === 12463 && str[pos + 1] === 12494 && str[pos + 2] === 12471 && str[pos + 3] === 12479) return true;
+      if(str[pos] === 12452 && str[pos + 1] === 12490 && str[pos + 2] === 12531) return true;
+      if(str[pos] === 12493 && str[pos + 1] === 12493) return true;
+      if(str[pos] === 12473 && str[pos + 1] === 12461 && str[pos + 2] === 12483 && str[pos + 3] === 12497) return true;
+      if(str[pos] === 12491 && str[pos + 1] === 12517 && str[pos + 2] === 12540 && str[pos + 3] === 12521) return true;
+      if(str[pos] === 12490 && str[pos + 1] === 12501 && str[pos + 2] === 12451) return true;
+      continue;
+    }
+    if(str[pos] === 12460) {
+      if(str[pos] === 12521 && str[pos + 1] === 12460 && str[pos + 2] === 12521) return true;
+      if(str[pos + 1] === 12540) {
+        if(str[pos] === 12487 && str[pos + 1] === 12451) return true;
+        if(str[pos] === 12513 && str[pos + 1] === 12452 && str[pos + 2] === 12523) return true;
+        continue;
+      }
+      if(str[pos] === 12523 && str[pos + 1] === 12540 && str[pos + 2] === 12521) return true;
+      if(str[pos] === 12496 && str[pos + 1] === 12452 && str[pos + 2] === 12488) return true;
+      if(str[pos] === 12502 && str[pos + 1] === 12522 && str[pos + 2] === 12450 && str[pos + 3] === 12473) return true;
+      continue;
+    }
+    if(str[pos] === 12454) {
+      if(str[pos] === 12452 && str[pos + 1] === 12531 && str[pos + 2] === 12487 && str[pos + 3] === 12451) return true;
+      if(str[pos + 1] === 12484) {
+        if(str[pos] === 12489 && str[pos + 1] === 12531) return true;
+        if(str[pos] === 12508 && str[pos + 1] === 12483 && str[pos + 2] === 12488) return true;
+        continue;
+      }
+      if(str[pos + 1] === 12477) {
+        if(str[pos] === 12483 && str[pos + 1] === 12461 && str[pos + 2] === 12540) return true;
+        if(str[pos] === 12495 && str[pos + 1] === 12481) return true;
+        continue;
+      }
+      if(str[pos] === 12497 && str[pos + 1] === 12540) return true;
+      if(str[pos] === 12522 && str[pos + 1] === 12512 && str[pos + 2] === 12540) return true;
+      continue;
+    }
+    if(str[pos] === 12465) {
+      if(str[pos] === 12531 && str[pos + 1] === 12479 && str[pos + 2] === 12525 && str[pos + 3] === 12473) return true;
+      if(str[pos] === 12540 && str[pos + 1] === 12471 && str[pos + 2] === 12451) return true;
+      if(str[pos] === 12512 && str[pos + 1] === 12483 && str[pos + 2] === 12477) return true;
+      if(str[pos] === 12483 && str[pos + 1] === 12461 && str[pos + 2] === 12531 && str[pos + 3] === 12464) return true;
+      if(str[pos] === 12452 && str[pos + 1] === 12467 && str[pos + 2] === 12454 && str[pos + 3] === 12458) return true;
+      continue;
+    }
+    if(str[pos] === 12518) {
+      if(str[pos] === 12524 && str[pos + 1] === 12452 && str[pos + 2] === 12489 && str[pos + 3] === 12523) return true;
+      if(str[pos] === 12531 && str[pos + 1] === 12466 && str[pos + 2] === 12521 && str[pos + 3] === 12540) return true;
+      if(str[pos + 1] === 12461) {
+        if(str[pos] === 12459 && str[pos + 1] === 12502 && str[pos + 2] === 12522) return true;
+        if(str[pos] === 12527 && str[pos + 1] === 12521 && str[pos + 2] === 12471) return true;
+        if(str[pos] === 12494 && str[pos + 1] === 12458 && str[pos + 2] === 12540) return true;
+        if(str[pos] === 12513 && str[pos + 1] === 12494 && str[pos + 2] === 12467) return true;
+        continue;
+      }
+      if(str[pos] === 12463 && str[pos + 1] === 12471 && str[pos + 2] === 12540) return true;
+      continue;
+    }
+    if(str[pos] === 12527) {
+      if(str[pos] === 12491 && str[pos + 1] === 12494 && str[pos + 2] === 12467) return true;
+      if(str[pos] === 12531 && str[pos + 1] === 12522 && str[pos + 2] === 12461 && str[pos + 3] === 12540) return true;
+      if(str[pos] === 12479 && str[pos + 1] === 12483 && str[pos + 2] === 12467) return true;
+      if(str[pos] === 12459 && str[pos + 1] === 12471 && str[pos + 2] === 12515 && str[pos + 3] === 12514) return true;
+      continue;
+    }
+    if(str[pos] === 12513) {
+      if(str[pos + 1] === 12479) {
+        if(str[pos] === 12514 && str[pos + 1] === 12531) return true;
+        if(str[pos] === 12531 && str[pos + 1] === 12464) return true;
+        if(str[pos] === 12464 && str[pos + 1] === 12525 && str[pos + 2] === 12473) return true;
+        continue;
+      }
+      if(str[pos] === 12494 && str[pos + 1] === 12463 && str[pos + 2] === 12521 && str[pos + 3] === 12466) return true;
+      if(str[pos + 1] === 12460) {
+        if(str[pos] === 12491 && str[pos + 1] === 12454 && str[pos + 2] === 12512) return true;
+        if(str[pos] === 12516 && str[pos + 1] === 12531 && str[pos + 2] === 12510) return true;
+        continue;
+      }
+      if(str[pos] === 12522 && str[pos + 1] === 12540 && str[pos + 2] === 12503) return true;
+      continue;
+    }
+    if(str[pos] === 12489) {
+      if(str[pos + 1] === 12463) {
+        if(str[pos] === 12463 && str[pos + 1] === 12521 && str[pos + 2] === 12466) return true;
+        if(str[pos] === 12465 && str[pos + 1] === 12452 && str[pos + 2] === 12523) return true;
+        if(str[pos] === 12525 && str[pos + 1] === 12483 && str[pos + 2] === 12464) return true;
+        continue;
+      }
+      if(str[pos + 1] === 12540) {
+        if(str[pos + 2] === 12489) {
+          if(str[pos] === 12522 && str[pos + 1] === 12458) return true;
+          if(str[pos] === 12540) return true;
+          continue;
+        }
+        if(str[pos] === 12502 && str[pos + 1] === 12523) return true;
+        if(str[pos] === 12511 && str[pos + 1] === 12521 && str[pos + 2] === 12540) return true;
+        if(str[pos] === 12479 && str[pos + 1] === 12463 && str[pos + 2] === 12531) return true;
+        continue;
+      }
+      if(str[pos] === 12460 && str[pos + 1] === 12540 && str[pos + 2] === 12473) return true;
+      if(str[pos + 1] === 12531) {
+        if(str[pos] === 12501 && str[pos + 1] === 12449 && str[pos + 2] === 12531) return true;
+        if(str[pos] === 12513 && str[pos + 1] === 12523) return true;
+        if(str[pos] === 12459 && str[pos + 1] === 12521 && str[pos + 2] === 12473) return true;
+        continue;
+      }
+      if(str[pos] === 12468 && str[pos + 1] === 12540 && str[pos + 2] === 12512) return true;
+      if(str[pos] === 12472 && str[pos + 1] === 12519 && str[pos + 2] === 12483 && str[pos + 3] === 12481) return true;
+      if(str[pos] === 12479 && str[pos + 1] === 12452 && str[pos + 2] === 12488 && str[pos + 3] === 12473) return true;
+      if(str[pos] === 12521 && str[pos + 1] === 12500 && str[pos + 2] === 12458 && str[pos + 3] === 12531) return true;
+      if(str[pos] === 12469 && str[pos + 1] === 12452 && str[pos + 2] === 12489 && str[pos + 3] === 12531) return true;
+      continue;
+    }
+    if(str[pos] === 12452) {
+      if(str[pos] === 12471 && str[pos + 1] === 12484 && str[pos + 2] === 12502 && str[pos + 3] === 12486) return true;
+      if(str[pos] === 12527 && str[pos + 1] === 12540 && str[pos + 2] === 12463) return true;
+      if(str[pos] === 12540 && str[pos + 1] === 12502 && str[pos + 2] === 12452) return true;
+      if(str[pos] === 12488 && str[pos + 1] === 12510 && str[pos + 2] === 12523) return true;
+      if(str[pos] === 12494 && str[pos + 1] === 12512 && str[pos + 2] === 12540) return true;
+      if(str[pos] === 12523 && str[pos + 1] === 12511 && str[pos + 2] === 12540 && str[pos + 3] === 12476) return true;
+      continue;
+    }
+    if(str[pos] === 12462) {
+      if(str[pos + 1] === 12515) {
+        if(str[pos] === 12521 && str[pos + 1] === 12489 && str[pos + 2] === 12473) return true;
+        if(str[pos] === 12525 && str[pos + 1] === 12483 && str[pos + 2] === 12503) return true;
+        continue;
+      }
+      if(str[pos] === 12521 && str[pos + 1] === 12486 && str[pos + 2] === 12451 && str[pos + 3] === 12490) return true;
+      continue;
+    }
+    if(str[pos] === 12516) {
+      if(str[pos + 1] === 12489) {
+        if(str[pos] === 12521 && str[pos + 1] === 12531) return true;
+        if(str[pos] === 12531) return true;
+        if(str[pos] === 12461 && str[pos + 1] === 12531 && str[pos + 2] === 12464) return true;
+        continue;
+      }
+      if(str[pos] === 12531 && str[pos + 1] === 12516 && str[pos + 2] === 12531 && str[pos + 3] === 12510) return true;
+      if(str[pos + 1] === 12511) {
+        if(str[pos] === 12459 && str[pos + 1] === 12521 && str[pos + 2] === 12473) return true;
+        if(str[pos] === 12521 && str[pos + 1] === 12511) return true;
+        continue;
+      }
+      if(str[pos] === 12523 && str[pos + 1] === 12461 && str[pos + 2] === 12514 && str[pos + 3] === 12494) return true;
+      if(str[pos] === 12472 && str[pos + 1] === 12525 && str[pos + 2] === 12531) return true;
+      continue;
+    }
+    if(str[pos] === 12524) {
+      if(str[pos] === 12450 && str[pos + 1] === 12467 && str[pos + 2] === 12452 && str[pos + 3] === 12523) return true;
+      if(str[pos + 1] === 12487 && str[pos + 2] === 12451) {
+        if(str[pos] === 12450 && str[pos + 1] === 12531) return true;
+        if(str[pos] === 12496) return true;
+        continue;
+      }
+      if(str[pos + 1] === 12472) {
+        if(str[pos] === 12450 && str[pos + 1] === 12452 && str[pos + 2] === 12473) return true;
+        if(str[pos] === 12525 && str[pos + 1] === 12483 && str[pos + 2] === 12463) return true;
+        if(str[pos] === 12473 && str[pos + 1] === 12481 && str[pos + 2] === 12523) return true;
+        if(str[pos] === 12462 && str[pos + 1] === 12460 && str[pos + 2] === 12473) return true;
+        continue;
+      }
+      if(str[pos] === 12483 && str[pos + 1] === 12463 && str[pos + 2] === 12454 && str[pos + 3] === 12470) return true;
+      if(str[pos] === 12531 && str[pos + 1] === 12488 && str[pos + 2] === 12521 && str[pos + 3] === 12540) return true;
+      continue;
+    }
+    if(str[pos] === 12472) {
+      if(str[pos] === 12464 && str[pos + 1] === 12470 && str[pos + 2] === 12464 && str[pos + 3] === 12510) return true;
+      if(str[pos + 1] === 12517) {
+        if(str[pos] === 12468 && str[pos + 1] === 12531) return true;
+        if(str[pos] === 12503 && str[pos + 1] === 12488 && str[pos + 2] === 12523) return true;
+        if(str[pos] === 12459 && str[pos + 1] === 12452 && str[pos + 2] === 12531) return true;
+        if(str[pos] === 12506 && str[pos + 1] === 12483 && str[pos + 2] === 12479) return true;
+        continue;
+      }
+      if(str[pos] === 12540 && str[pos + 1] === 12521 && str[pos + 2] === 12531 && str[pos + 3] === 12473) return true;
+      if(str[pos] === 12521 && str[pos + 1] === 12540 && str[pos + 2] === 12481) return true;
+      if(str[pos] === 12496 && str[pos + 1] === 12467 && str[pos + 2] === 12452 && str[pos + 3] === 12523) return true;
+      continue;
+    }
+    if(str[pos] === 12505) {
+      if(str[pos + 1] === 12488 && str[pos + 2] === 12505) {
+        if(str[pos] === 12479 && str[pos + 1] === 12540) return true;
+        if(str[pos] === 12488 && str[pos + 1] === 12531) return true;
+        continue;
+      }
+      if(str[pos + 1] === 12525) {
+        if(str[pos] === 12505 && str[pos + 1] === 12523 && str[pos + 2] === 12488) return true;
+        if(str[pos] === 12522 && str[pos + 1] === 12531 && str[pos + 2] === 12460) return true;
+        continue;
+      }
+      if(str[pos] === 12452 && str[pos + 1] === 12522 && str[pos + 2] === 12540 && str[pos + 3] === 12501) return true;
+      continue;
+    }
+    if(str[pos] === 12471) {
+      if(str[pos + 1] === 12455) {
+        if(str[pos] === 12452 && str[pos + 1] === 12511) return true;
+        if(str[pos] === 12523 && str[pos + 1] === 12480 && str[pos + 2] === 12540) return true;
+        continue;
+      }
+      if(str[pos] === 12540 && str[pos + 1] === 12489 && str[pos + 2] === 12521) return true;
+      if(str[pos] === 12515 && str[pos + 1] === 12527 && str[pos + 2] === 12540 && str[pos + 3] === 12474) return true;
+      if(str[pos] === 12470 && str[pos + 1] === 12522 && str[pos + 2] === 12460 && str[pos + 3] === 12540) return true;
+      continue;
+    }
+    if(str[pos] === 12466 && str[pos + 1] === 12531 && str[pos + 2] === 12460 && str[pos + 3] === 12540) return true;
+    if(str[pos] === 12479) {
+      if(str[pos] === 12483 && str[pos + 1] === 12484 && str[pos + 2] === 12540) return true;
+      if(str[pos + 1] === 12510) {
+        if(str[pos] === 12470 && str[pos + 1] === 12521 && str[pos + 2] === 12471) return true;
+        if(str[pos] === 12479 && str[pos + 1] === 12510) return true;
+        if(str[pos] === 12531 && str[pos + 1] === 12479) return true;
+        continue;
+      }
+      if(str[pos] === 12493 && str[pos + 1] === 12508 && str[pos + 2] === 12540) return true;
+      if(str[pos] === 12484 && str[pos + 1] === 12505 && str[pos + 2] === 12452) return true;
+      if(str[pos] === 12486 && str[pos + 1] === 12488 && str[pos + 2] === 12503 && str[pos + 3] === 12473) return true;
+      continue;
+    }
+    if(str[pos] === 12456) {
+      if(str[pos] === 12499 && str[pos + 1] === 12527 && str[pos + 2] === 12521 && str[pos + 3] === 12540) return true;
+      if(str[pos + 1] === 12524) {
+        if(str[pos + 2] === 12461) {
+          if(str[pos] === 12483 && str[pos + 1] === 12489) return true;
+          if(str[pos] === 12502 && str[pos + 1] === 12523) return true;
+          continue;
+        }
+        if(str[pos] === 12502 && str[pos + 1] === 12540) return true;
+        continue;
+      }
+      if(str[pos] === 12452 && str[pos + 1] === 12497 && str[pos + 2] === 12512) return true;
+      if(str[pos] === 12540 && str[pos + 1] === 12501 && str[pos + 2] === 12451) return true;
+      if(str[pos] === 12450 && str[pos + 1] === 12540 && str[pos + 2] === 12512 && str[pos + 3] === 12489) return true;
+      if(str[pos + 1] === 12531) {
+        if(str[pos] === 12486 && str[pos + 1] === 12452) return true;
+        if(str[pos] === 12506 && str[pos + 1] === 12523 && str[pos + 2] === 12488) return true;
+        continue;
+      }
+      if(str[pos + 1] === 12493 && str[pos + 2] === 12467) {
+        return true;
+        if(str[pos] === 12525 && str[pos + 1] === 12525) return true;
+        continue;
+      }
+      if(str[pos] === 12486 && str[pos + 1] === 12508 && str[pos + 2] === 12540 && str[pos + 3] === 12473) return true;
+      if(str[pos] === 12523 && str[pos + 1] === 12524 && str[pos + 2] === 12452 && str[pos + 3] === 12489) return true;
+      if(str[pos] === 12512 && str[pos + 1] === 12522 && str[pos + 2] === 12483 && str[pos + 3] === 12488) return true;
+      continue;
+    }
+    if(str[pos] === 12523) {
+      if(str[pos] === 12462 && str[pos + 1] === 12450) return true;
+      if(str[pos] === 12540 && str[pos + 1] === 12472 && str[pos + 2] === 12517 && str[pos + 3] === 12521) return true;
+      if(str[pos] === 12531 && str[pos + 1] === 12497 && str[pos + 2] === 12483 && str[pos + 3] === 12497) return true;
+      if(str[pos] === 12522 && str[pos + 1] === 12522) return true;
+      if(str[pos] === 12490 && str[pos + 1] === 12488 && str[pos + 2] === 12540 && str[pos + 3] === 12531) return true;
+      if(str[pos] === 12463 && str[pos + 1] === 12471 && str[pos + 2] === 12458) return true;
+      if(str[pos] === 12459 && str[pos + 1] === 12522 && str[pos + 2] === 12458) return true;
+      continue;
+    }
+    if(str[pos] === 12502) {
+      if(str[pos] === 12521 && str[pos + 1] === 12483 && str[pos + 2] === 12461 && str[pos + 3] === 12540) return true;
+      if(str[pos + 1] === 12540) {
+        if(str[pos] === 12473 && str[pos + 1] === 12479 && str[pos + 2] === 12540) return true;
+        if(str[pos + 2] === 12496 && str[pos + 3] === 12540) {
+          return true;
+          if(str[pos] === 12531) return true;
+          continue;
+        }
+        if(str[pos] === 12500 && str[pos + 1] === 12483 && str[pos + 2] === 12464) return true;
+        continue;
+      }
+      if(str[pos] === 12523 && str[pos + 1] === 12540) return true;
+      if(str[pos] === 12499 && str[pos + 1] === 12451) return true;
+      if(str[pos] === 12452 && str[pos + 1] === 12476 && str[pos + 2] === 12523) return true;
+      if(str[pos] === 12491 && str[pos + 1] === 12515 && str[pos + 2] === 12483 && str[pos + 3] === 12488) return true;
+      continue;
+    }
+    if(str[pos] === 12511) {
+      if(str[pos] === 12491 && str[pos + 1] === 12522 && str[pos + 2] === 12517 && str[pos + 3] === 12454) return true;
+      if(str[pos + 1] === 12517 && str[pos + 2] === 12454) {
+        return true;
+        if(str[pos] === 12484 && str[pos + 1] === 12540) return true;
+        continue;
+      }
+      if(str[pos] === 12523 && str[pos + 1] === 12479 && str[pos + 2] === 12531 && str[pos + 3] === 12463) return true;
+      if(str[pos] === 12474 && str[pos + 1] === 12468 && str[pos + 2] === 12525 && str[pos + 3] === 12454) return true;
+      if(str[pos] === 12525 && str[pos + 1] === 12459 && str[pos + 2] === 12525 && str[pos + 3] === 12473) return true;
+      if(str[pos + 1] === 12494) {
+        if(str[pos] === 12510 && str[pos + 1] === 12480 && str[pos + 2] === 12512) return true;
+        if(str[pos] === 12512 && str[pos + 1] === 12483 && str[pos + 2] === 12481) return true;
+        continue;
+      }
+      if(str[pos] === 12484 && str[pos + 1] === 12495 && str[pos + 2] === 12491 && str[pos + 3] === 12540) return true;
+      if(str[pos + 1] === 12511 && str[pos + 2] === 12525) {
+        if(str[pos] === 12483 && str[pos + 1] === 12503) return true;
+        if(str[pos] === 12523) return true;
+        continue;
+      }
+      if(str[pos] === 12459 && str[pos + 1] === 12523 && str[pos + 2] === 12466) return true;
+      continue;
+    }
+    if(str[pos] === 12495) {
+      if(str[pos] === 12463 && str[pos + 1] === 12522 && str[pos + 2] === 12517 && str[pos + 3] === 12540) return true;
+      if(str[pos] === 12493 && str[pos + 1] === 12483 && str[pos + 2] === 12467) return true;
+      if(str[pos] === 12460 && str[pos + 1] === 12493 && str[pos + 2] === 12540 && str[pos + 3] === 12523) return true;
+      if(str[pos + 1] === 12522) {
+        if(str[pos] === 12486 && str[pos + 1] === 12516 && str[pos + 2] === 12510) return true;
+        if(str[pos] === 12540 && str[pos + 1] === 12475 && str[pos + 2] === 12531) return true;
+        continue;
+      }
+      if(str[pos] === 12483 && str[pos + 1] === 12469 && str[pos + 2] === 12512) return true;
+      if(str[pos] === 12500 && str[pos + 1] === 12490 && str[pos + 2] === 12473) return true;
+      if(str[pos + 1] === 12473) {
+        if(str[pos] === 12502 && str[pos + 1] === 12524 && str[pos + 2] === 12525) return true;
+        if(str[pos] === 12508 && str[pos + 1] === 12540) return true;
+        continue;
+      }
+      if(str[pos] === 12502 && str[pos + 1] === 12493 && str[pos + 2] === 12540 && str[pos + 3] === 12463) return true;
+      if(str[pos] === 12531 && str[pos + 1] === 12486 && str[pos + 2] === 12540 && str[pos + 3] === 12523) return true;
+      if(str[pos] === 12516 && str[pos + 1] === 12471 && str[pos + 2] === 12460 && str[pos + 3] === 12513) return true;
+      continue;
+    }
+    if(str[pos] === 12481) {
+      if(str[pos] === 12467 && str[pos + 1] === 12522 && str[pos + 2] === 12540 && str[pos + 3] === 12479) return true;
+      if(str[pos] === 12519 && str[pos + 1] === 12531 && str[pos + 2] === 12481 && str[pos + 3] === 12540) return true;
+      if(str[pos] === 12515 && str[pos + 1] === 12540 && str[pos + 2] === 12524 && str[pos + 3] === 12512) return true;
+      if(str[pos + 1] === 12523) {
+        if(str[pos] === 12479 && str[pos + 1] === 12522 && str[pos + 2] === 12473) return true;
+        if(str[pos] === 12483 && str[pos + 1] === 12488) return true;
+        continue;
+      }
+      if(str[pos] === 12522 && str[pos + 1] === 12540 && str[pos + 2] === 12531) return true;
+      if(str[pos + 1] === 12455 && str[pos + 2] === 12522) {
+        if(str[pos] === 12512) return true;
+        if(str[pos] === 12531 && str[pos + 1] === 12508) return true;
+        continue;
+      }
+      continue;
+    }
+    if(str[pos] === 12507) {
+      if(str[pos] === 12454 && str[pos + 1] === 12458 && str[pos + 2] === 12454) return true;
+      if(str[pos] === 12540 && str[pos + 1] === 12507 && str[pos + 2] === 12540) return true;
+      if(str[pos + 1] === 12456 && str[pos + 2] === 12523) {
+        if(str[pos] === 12458 && str[pos + 1] === 12540) return true;
+        if(str[pos] === 12467) return true;
+        continue;
+      }
+      continue;
+    }
+    if(str[pos] === 12520) {
+      if(str[pos] === 12523 && str[pos + 1] === 12494 && str[pos + 2] === 12474 && str[pos + 3] === 12463) return true;
+      if(str[pos] === 12540 && str[pos + 1] === 12462 && str[pos + 2] === 12521 && str[pos + 3] === 12473) return true;
+      if(str[pos] === 12510 && str[pos + 1] === 12527 && str[pos + 2] === 12523) return true;
+      if(str[pos] === 12494 && str[pos + 1] === 12527 && str[pos + 2] === 12540 && str[pos + 3] === 12523) return true;
+      continue;
+    }
+    if(str[pos] === 12493) {
+      if(str[pos + 1] === 12452 && str[pos + 2] === 12486 && str[pos + 3] === 12451) {
+        return true;
+        if(str[pos] === 12458) return true;
+        continue;
+      }
+      if(str[pos] === 12531 && str[pos + 1] === 12489 && str[pos + 2] === 12540 && str[pos + 3] === 12523) return true;
+      if(str[pos] === 12458 && str[pos + 1] === 12521 && str[pos + 2] === 12531 && str[pos + 3] === 12488) return true;
+      continue;
+    }
+    if(str[pos] === 12492) {
+      if(str[pos] === 12458 && str[pos + 1] === 12540) return true;
+      if(str[pos] === 12510 && str[pos + 1] === 12463 && str[pos + 2] === 12525 && str[pos + 3] === 12540) return true;
+      if(str[pos] === 12465 && str[pos + 1] === 12491 && str[pos + 2] === 12531) return true;
+      continue;
+    }
+    if(str[pos] === 12512) {
+      if(str[pos + 1] === 12454 && str[pos + 2] === 12510) {
+        return true;
+        if(str[pos] === 12540 && str[pos + 1] === 12472) return true;
+        continue;
+      }
+      if(str[pos] === 12481 && str[pos + 1] === 12517 && str[pos + 2] === 12540 && str[pos + 3] === 12523) return true;
+      if(str[pos] === 12483 && str[pos + 1] === 12463 && str[pos + 2] === 12523) return true;
+      if(str[pos + 1] === 12463) {
+        if(str[pos] === 12496 && str[pos + 1] === 12540 && str[pos + 2] === 12489) return true;
+        if(str[pos] === 12507 && str[pos + 1] === 12540 && str[pos + 2] === 12463) return true;
+        continue;
+      }
+      continue;
+    }
+    if(str[pos] === 12477) {
+      if(str[pos] === 12523 && str[pos + 1] === 12525 && str[pos + 2] === 12483 && str[pos + 3] === 12463) return true;
+      if(str[pos + 1] === 12540 && str[pos + 2] === 12490) {
+        if(str[pos] === 12494) return true;
+        if(str[pos] === 12531 && str[pos + 1] === 12473) return true;
+        continue;
+      }
+      continue;
+    }
+    if(str[pos] === 12494) {
+      if(str[pos] === 12467 && str[pos + 1] === 12483 && str[pos + 2] === 12481) return true;
+      if(str[pos] === 12474 && str[pos + 1] === 12497 && str[pos + 2] === 12473) return true;
+      if(str[pos] === 12463 && str[pos + 1] === 12479 && str[pos + 2] === 12473) return true;
+      continue;
+    }
+    if(str[pos] === 12464) {
+      if(str[pos + 1] === 12521) {
+        if(str[pos + 2] === 12452) {
+          if(str[pos] === 12458 && str[pos + 1] === 12531) return true;
+          if(str[pos] === 12460 && str[pos + 1] === 12540) return true;
+          continue;
+        }
+        if(str[pos] === 12531 && str[pos + 1] === 12502 && str[pos + 2] === 12523) return true;
+        if(str[pos] === 12456 && str[pos + 1] === 12490) return true;
+        if(str[pos] === 12540 && str[pos + 1] === 12489 && str[pos + 2] === 12531) return true;
+        continue;
+      }
+      if(str[pos + 1] === 12524) {
+        if(str[pos] === 12452 && str[pos + 1] === 12471 && str[pos + 2] === 12450) return true;
+        if(str[pos] === 12483 && str[pos + 1] === 12464 && str[pos + 2] === 12523) return true;
+        continue;
+      }
+      continue;
+    }
+    if(str[pos] === 12484) {
+      if(str[pos] === 12481 && str[pos + 1] === 12491 && str[pos + 2] === 12531) return true;
+      if(str[pos] === 12508 && str[pos + 1] === 12484 && str[pos + 2] === 12508) return true;
+      continue;
+    }
+    if(str[pos] === 12504) {
+      if(str[pos] === 12521 && str[pos + 1] === 12463 && str[pos + 2] === 12525 && str[pos + 3] === 12473) return true;
+      if(str[pos] === 12523 && str[pos + 1] === 12460 && str[pos + 2] === 12540) return true;
+      if(str[pos] === 12452 && str[pos + 1] === 12460 && str[pos + 2] === 12491) return true;
+      continue;
+    }
+    if(str[pos] === 12486 && str[pos + 1] === 12483) {
+      if(str[pos] === 12459 && str[pos + 1] === 12491 && str[pos + 2] === 12531) return true;
+      if(str[pos] === 12509 && str[pos + 1] === 12454 && str[pos + 2] === 12458) return true;
+      continue;
+    }
+    if(str[pos] === 12475 && str[pos + 1] === 12524 && str[pos + 2] === 12499 && str[pos + 3] === 12451) return true;
+    if(str[pos] === 12508) {
+      if(str[pos] === 12473 && str[pos + 1] === 12468 && str[pos + 2] === 12489 && str[pos + 3] === 12521) return true;
+      if(str[pos] === 12540 && str[pos + 1] === 12510 && str[pos + 2] === 12531 && str[pos + 3] === 12480) return true;
+      continue;
+    }
+    if(str[pos] === 12470 && str[pos + 1] === 12531 && str[pos + 2] === 12464 && str[pos + 3] === 12540 && str[pos + 4] === 12473) return true;
+    continue;
+  }
+  return false;
+};

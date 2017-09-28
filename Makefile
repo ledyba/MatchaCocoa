@@ -1,16 +1,10 @@
-.PHONY: all sm naive regex test bench
+.PHONY: all gen test bench
 
 all:
 	stack build
 
-sm: all
-	stack exec matcha-cocoa js-statemachine words.txt
-
-naive: all
-	stack exec matcha-cocoa js-naive words.txt
-
-regex: all
-	stack exec matcha-cocoa regex words.txt
+gen: all
+	bash gen-bench.sh
 
 test:
 	stack test
