@@ -4,7 +4,7 @@ all:
 	stack build
 
 run: all
-	stack exec matcha-cocoa js words.txt > words.js
+	stack exec matcha-cocoa js-statemachine words.txt
 
 test:
 	stack test

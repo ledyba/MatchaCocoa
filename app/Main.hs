@@ -15,9 +15,9 @@ main = do
         let (target:files) = args
         words <- readWords files
         case target of
-          "js" -> putStrLn (compile JS words)
-          "js2" -> putStrLn (compile JS2 words)
-          "regex" -> putStrLn (compile REGEX words)
+          "js-statemachine" -> putStrLn (compile JS_StateMachine words)
+          "js-naive" -> putStrLn (compile JS_Naive words)
+          "regex" -> putStrLn (compile Regex words)
           "php" -> hPutStrLn stderr "Not Implemented for PHP"
 
 

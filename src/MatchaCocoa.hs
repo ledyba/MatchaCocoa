@@ -5,15 +5,15 @@ import Prelude hiding (words)
 import MatchaCocoa.Trie(Node(..), build, Payload(..))
 import Data.List (intercalate)
 
-data CompileTarget = PHP | JS | JS2 | REGEX
+data CompileTarget = JS_StateMachine | JS_Naive | Regex
 
 compile :: CompileTarget -> [String] -> String
-compile JS words = compileSM JS sm
+compile JS_StateMachine words = compileSM2JS sm
     where
         (trie,_) = setSym (build words) 0
         sm = makeStateMachine trie
 
-compile JS2 words = "function(str){ for(let pos = 0; pos < str.length; pos++) { if("++body++") {return true;} } return false; }"
+compile JS_Naive words = "function(str){ for(let pos = 0; pos < str.length; pos++) { if("++body++") {return true;} } return false; }"
     where
         body = compile' 0 (build words)
         compile' _ (EndNode _) = "true"
@@ -22,7 +22,7 @@ compile JS2 words = "function(str){ for(let pos = 0; pos < str.length; pos++) { 
                 compileNodes (str, node@(Node _ _)) = ("(str.startsWith('"++str++"', pos + "++(show idx)++")") ++ " && " ++ (compile' (idx + length str) node) ++ ")"
                 compileNodes (str, EndNode _) = ("str.startsWith('"++str++"', pos + "++(show idx)++")")
                 
-compile REGEX words = compile' (build words)
+compile Regex words = compile' (build words)
     where
         compile' (EndNode _) = ""
         compile' (Node nodes _) = "(?:"++(intercalate "|" (fmap compileNodes nodes))++")"
@@ -48,8 +48,8 @@ flatNode node@(Node nodes (Payload state)) = (state, enumCond node):(nodes >>= e
 join :: String -> [String] -> String
 join indent xs = intercalate "\n" (fmap (indent++) xs)
 
-compileSM :: CompileTarget -> StateMachine -> String
-compileSM JS (StateMachine conditions) = join "" ([
+compileSM2JS :: StateMachine -> String
+compileSM2JS (StateMachine conditions) = join "" ([
     "function(str) {",
     "  let state = 0;",
     "  let pos = 0;",
@@ -75,7 +75,6 @@ compileSM JS (StateMachine conditions) = join "" ([
               "  continue;",
               "}"]
             else ["if(str.startsWith('"++str++"', cur)) return true;"]
-compileSM _ _ = error "NotImplemented"
 
 setSym :: Node -> Int -> (Node, Int)
 setSym (EndNode _) zero = (EndNode (Payload (-1)), zero)

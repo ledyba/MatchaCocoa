@@ -25,7 +25,7 @@ A compiler to generate words matcher for js and regex.
 ```
 
 ```js
-// % stack exec matcha-cocoa js simple.txt
+// % stack exec matcha-cocoa js-statemachine simple.txt
 /* Native State Machine */
 function(str) {
   let state = 0;
@@ -51,7 +51,7 @@ function(str) {
 ```
 
 ```js
-// % stack exec matcha-cocoa js2 simple.txt
+// % stack exec matcha-cocoa js-naive simple.txt
 /* Naive Native Code */
 function(str){
   for(let pos = 0; pos < str.length; pos++) {
