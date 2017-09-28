@@ -1,8 +1,3 @@
-const sm = require("./sm.js");
-const regex = require("./regex.js");
-const naive = require("./naive.js");
-const normal = require("./normal.js");
-
 const SearchStrs = [
   // https://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%AF%E3%82%A4%E3%81%AE%E6%AD%B4%E5%8F%B2
   `有史以前は太平洋を渡ってやってきたポリネシア人たちが持ち込んだ伝統を守りつつ生活を営んでいたが、1778年のジェームズ・クックによる「発見」以降、ハワイは近代化の波へ飲み込まれることとなる。島同士の内戦を経てハワイ王国という100年に及ぶ統一国家が確立し、欧米人との接触に伴って社会は急速に変容し始める。19世紀前半より宗教的基盤の確立と経済発展を求めた欧米入植者たちとその末裔は、次第に経済的安定を保障するための政治権力を欲するようになり、その影響は時代を経るにつれて強力なものとなっていった。サトウキビ農園とその交易による莫大な土地と富を手に入れた成功者たちは更なる産業発展を求めて安価な労働力を日本を中心とする様々な地域より大量に呼び込み、ハワイ社会は多くの人種が混合した複雑な文化を育んでいった。
@@ -28,55 +23,22 @@ const SearchStrs = [
 ];
 const MAX = SearchStrs.length * 20000;
 
-let StateMachine = function(){
+let measure = function(title, f) {
   let before = new Date();
   let result = 0;
   for(let i = 0; i < MAX; i++) {
     let str = SearchStrs[(i % SearchStrs.length)];
-    if(sm(str)){
+    if(f(str)){
       result++;
     }
   }
-  console.log("[Native State Machine] Time: "+(new Date()-before)+"ms, matches: "+result + " / " + MAX);
+  title = (title+"                         ").substr(0,20);
+  let time = ("          " + (new Date()-before)).substr(-10);
+  console.log("method="+title+", time="+time+"ms, matches="+result + "(/" + MAX+")");
 };
 
-let Regex = function(){
-  let before = new Date();
-  let result = 0;
-  for(let i = 0; i < MAX; i++) {
-    let str = SearchStrs[(i % SearchStrs.length)];
-    if(regex(str)){
-      result++;
-    }
-  }
-  console.log("[Regex] Time: "+(new Date()-before)+"ms, matches: "+result + " / " + MAX);
-};
+measure("Normal", require("./normal.js"));
+measure("Regex", require("./regex.js"));
+measure("Naive Native Code", require("./naive.js"));
+measure("Native StateMachine", require("./sm.js"));
 
-let Naive = function(){
-  let before = new Date();
-  let result = 0;
-  for(let i = 0; i < MAX; i++) {
-    let str = SearchStrs[(i % SearchStrs.length)];
-    if(naive(str)){
-      result++;
-    }
-  }
-  console.log("[Naive Native Code] Time: "+(new Date()-before)+"ms, matches: "+result + " / " + MAX);
-};
-
-let Normal = function(){
-  let before = new Date();
-  let result = 0;
-  for(let i = 0; i < MAX; i++) {
-    let str = SearchStrs[(i % SearchStrs.length)];
-    if(normal(str)){
-      result++;
-    }
-  }
-  console.log("[Normal] Time: "+(new Date()-before)+"ms, matches: "+result + " / " + MAX);
-};
-
-Normal();
-Regex();
-Naive();
-StateMachine();

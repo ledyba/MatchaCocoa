@@ -79,8 +79,8 @@ See: [./bench](./bench) directory.
 
 ```sh
 % cd bench && node bench.js
-[Normal] Time: 1682ms, matches: 20000 / 100000
-[Regex] Time: 150ms, matches: 20000 / 100000
-[Naive Native Code] Time: 80490ms, matches: 20000 / 100000
-[Native State Machine] Time: 20755ms, matches: 20000 / 100000
+method=Normal              , time=      1875ms, matches=20000(/100000)
+method=Regex               , time=       159ms, matches=20000(/100000)
+method=Naive Native Code   , time=     80987ms, matches=20000(/100000)
+method=Native StateMachine , time=     19154ms, matches=20000(/100000)
 ```
