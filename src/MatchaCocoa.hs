@@ -38,8 +38,8 @@ compile JS_Naive words = join "" $ [
             where
                 idx = length sumstr
                 compileNodes :: (String, Node) -> [String]
-                compileNodes ("", EndNode _) = [indent ++ "return true;"]
-                compileNodes (str, EndNode _) = [indent ++ "if("++(intercalate " && " (zipWith makeCond [idx..] str))++") return true;"]
+                compileNodes ("", EndNode _) = [indent ++ "return true; // [" ++ sumstr ++ "]"]
+                compileNodes (str, EndNode _) = [indent ++ "if("++(intercalate " && " (zipWith makeCond [idx..] str))++") return true; // [" ++ sumstr ++ str ++ "]"]
                 compileNodes (str, node@(Node _ _)) = [
                      indent ++ "if("++(intercalate " && " (zipWith makeCond [idx..] str))++") { // [" ++(sumstr++str)++"]"] ++
                     (compile' (indent ++ "  ") (sumstr ++ str) node) ++ 
