@@ -21,25 +21,28 @@ compile JS_Naive words = join "" $ [
     "  for(let i=0;i < length;i++) {",
     "    str[i] = orig_str.charCodeAt(i);",
     "  }",
-    "  for(let pos = 0; pos < length; pos++) {"]
+    "  let pos = 0;",
+    "  while(pos < length) {"]
     ++ body ++ [
     "  }",
     "  return false;",
     "}"]
     where
+        pnode = build words
         body :: [String]
-        body = compile' "    " 0 (build words)
-        compile' :: String -> Int -> Node -> [String]
+        body = compile' "    " "" pnode
+        compile' :: String -> String -> Node -> [String]
         compile' _ _ (EndNode _) = error "[BUG] Do not call compile' on EndNode."
-        compile' indent idx (Node nodes _) = (nodes >>= compileNodes) ++ 
-            [indent ++ "continue;"]
+        compile' indent sumstr (Node nodes _) = (nodes >>= compileNodes) ++ 
+            [indent ++ "pos+="++(show $ calcNext pnode sumstr)++"; continue;"]
             where
+                idx = length sumstr
                 compileNodes :: (String, Node) -> [String]
                 compileNodes ("", EndNode _) = [indent ++ "return true;"]
                 compileNodes (str, EndNode _) = [indent ++ "if("++(intercalate " && " (zipWith makeCond [idx..] str))++") return true;"]
                 compileNodes (str, node@(Node _ _)) = [
-                     indent ++ "if("++(intercalate " && " (zipWith makeCond [idx..] str))++") {"] ++
-                    (compile' (indent ++ "  ") (idx + length str) node) ++ 
+                     indent ++ "if("++(intercalate " && " (zipWith makeCond [idx..] str))++") { // [" ++(sumstr++str)++"]"] ++
+                    (compile' (indent ++ "  ") (sumstr ++ str) node) ++ 
                     [indent ++ "}"]
                 makeCond :: Int -> Char -> String
                 makeCond 0 chr = "str[pos] === " ++ (show $ ord chr)
@@ -96,13 +99,7 @@ compileSM2JS (StateMachine pnode conditions) = join "" ([
         compileCond indent (state, substr, nexts) = fmap (indent++) (
             ["case "++(show state)++": // [" ++ substr ++ "]"] ++
             (nexts >>= \(str, next) -> fmap ("  "++) $ compileNext str next)++
-            ["  pos += "++ (show $ calcNext substr) ++"; cur = pos; continue;"])
-        calcNext :: String -> Int
-        calcNext [] = 1
-        calcNext (_:xs) = if partialMatch pnode xs then 1 else calcNext' 2 xs
-        calcNext' :: Int -> String -> Int
-        calcNext' cnt [] = cnt
-        calcNext' cnt (_:xs) = if partialMatch pnode xs then cnt else calcNext' (1+cnt) xs
+            ["  pos += "++ (show $ calcNext pnode substr) ++"; cur = pos; continue;"])
         compileNext :: String -> Int -> [String]
         compileNext "" next | next <= 0 = ["return true;"];
         compileNext str next =
@@ -128,3 +125,11 @@ setSym (Node nodes _) zero = (Node nodes' (Payload zero), next)
             setNumber' acc [] s = (reverse acc, s)
             setNumber' acc ((str, node):xs) s = setNumber' ((str, node'):acc) xs s'
                 where (node', s') = setSym node s
+
+calcNext :: Node -> String -> Int
+calcNext _ [] = 1
+calcNext node (_:xs) = if partialMatch node xs then 1 else calcNext' 2 xs
+  where 
+    calcNext' :: Int -> String -> Int
+    calcNext' cnt [] = cnt
+    calcNext' cnt (_:xs) = if partialMatch node xs then cnt else calcNext' (1+cnt) xs
