@@ -98,18 +98,18 @@ compileSM2JS (StateMachine pnode conditions) = join "" ([
         compileCond :: String -> (Int, String, [(String, Int)]) -> [String]
         compileCond indent (state, substr, nexts) = fmap (indent++) (
             ["case "++(show state)++": // [" ++ substr ++ "]"] ++
-            (nexts >>= \(str, next) -> fmap ("  "++) $ compileNext str next)++
+            (nexts >>= \(str, next) -> fmap ("  "++) $ compileNext substr str next)++
             ["  pos += "++ (show $ calcNext pnode substr) ++"; cur = pos; continue;"])
-        compileNext :: String -> Int -> [String]
-        compileNext "" next | next <= 0 = ["return true;"];
-        compileNext str next =
+        compileNext :: String -> String -> Int -> [String]
+        compileNext substr "" next | next <= 0 = ["return true; // [" ++ substr ++ "]"];
+        compileNext substr str next =
             if next > 0 then [
-              "if("++conds++") {",
+              "if("++conds++") { // [" ++ substr++str ++ "]",
               "  state = "++(show next)++";",
               "  cur += "++(show $ length str)++";",
               "  continue;",
               "}"]
-            else ["if("++conds++") return true;"]
+            else ["if("++conds++") return true; // [" ++ substr++str ++ "]"]
             where
                 conds = intercalate " && " (zipWith makeCond [0..] str)
                 makeCond :: Int -> Char -> String
