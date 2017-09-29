@@ -1,9 +1,10 @@
 module.exports=function(orig_str){
-  let str = new Array(orig_str.length);
-  for(let i=0;i<orig_str.length;i++) {
+  const length = orig_str.length;
+  let str = new Array(length);
+  for(let i=0;i < length;i++) {
     str[i] = orig_str.charCodeAt(i);
   }
-  for(let pos = 0; pos < str.length; pos++) {
+  for(let pos = 0; pos < length; pos++) {
     if(str[pos] === 12501) {
       if(str[pos+1] === 12471 && str[pos+2] === 12462) {
         if(str[pos+3] === 12477 && str[pos+4] === 12454) return true;

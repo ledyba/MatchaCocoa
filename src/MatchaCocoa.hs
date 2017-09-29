@@ -16,11 +16,12 @@ compile JS_StateMachine words = compileSM2JS sm
 
 compile JS_Naive words = join "" $ [
     "function(orig_str){",
-    "  let str = new Array(orig_str.length);",
-    "  for(let i=0;i<orig_str.length;i++) {",
+    "  const length = orig_str.length;",
+    "  let str = new Array(length);",
+    "  for(let i=0;i < length;i++) {",
     "    str[i] = orig_str.charCodeAt(i);",
     "  }",
-    "  for(let pos = 0; pos < str.length; pos++) {"]
+    "  for(let pos = 0; pos < length; pos++) {"]
     ++ body ++ [
     "  }",
     "  return false;",
@@ -73,14 +74,15 @@ join indent xs = intercalate "\n" (fmap (indent++) xs)
 compileSM2JS :: StateMachine -> String
 compileSM2JS (StateMachine conditions) = join "" ([
     "function(orig_str) {",
+    "  const length = orig_str.length;",
     "  let state = 0;",
     "  let pos = 0;",
     "  let cur = 0;",
-    "  let str = new Array(orig_str.length);",
-    "  for(let i=0;i<orig_str.length;i++) {",
+    "  let str = new Array(length);",
+    "  for(let i=0;i<length;i++) {",
     "    str[i] = orig_str.charCodeAt(i);",
     "  }",
-    "  for(;pos < str.length;) switch(state) {"] ++
+    "  while(pos < length) switch(state) {"] ++
     (conditions >>= (compileCond "    ")) ++
     ["    default: throw new Exception('Unknown state: '+state);",
     "  }",
@@ -97,7 +99,7 @@ compileSM2JS (StateMachine conditions) = join "" ([
         compileNext str next =
             if next > 0 then [
               "if("++conds++") {",
-              "  state="++(show next)++";",
+              "  state = "++(show next)++";",
               "  cur += "++(show $ length str)++";",
               "  continue;",
               "}"]
@@ -107,7 +109,7 @@ compileSM2JS (StateMachine conditions) = join "" ([
                 makeCond :: Int -> Char -> String
                 makeCond 0 chr = "str[cur] === " ++ (show $ ord chr)
                 makeCond idx chr = "str[cur+"++(show idx)++"] === " ++ (show $ ord chr)
-
+                
 setSym :: Node -> Int -> (Node, Int)
 setSym (EndNode _) zero = (EndNode (Payload (-1)), zero)
 setSym (Node nodes _) zero = (Node nodes' (Payload zero), next)
