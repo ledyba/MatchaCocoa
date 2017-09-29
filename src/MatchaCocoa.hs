@@ -2,7 +2,7 @@ module MatchaCocoa
     (CompileTarget(..), compile) where
 
 import Prelude hiding (words)
-import MatchaCocoa.Trie(Node(..), build, Payload(..))
+import MatchaCocoa.Trie(Node(..), build, partialMatch, Payload(..))
 import Data.List (intercalate)
 import Data.Char (ord)
 
@@ -52,16 +52,19 @@ compile Regex words = compile' (build words)
             where
                 compileNodes (str, node) = str ++ (compile' node)
 
-data StateMachine = StateMachine [(Int, [(String, Int)])] deriving (Show, Eq)
+data StateMachine = StateMachine Node [(Int, String, [(String, Int)])] deriving (Show, Eq)
 makeStateMachine :: Node -> StateMachine
-makeStateMachine node = StateMachine (flatNode node)
+makeStateMachine node = StateMachine node (flatNode node)
 
-flatNode :: Node -> [(Int, [(String, Int)])]
-flatNode node@(Node nodes (Payload state)) = (state, enumCond node):(nodes >>= enumNode)
+flatNode :: Node -> [(Int, String, [(String, Int)])]
+flatNode = flatNode' ""
+
+flatNode' :: String -> Node -> [(Int, String, [(String, Int)])]
+flatNode' acc node@(Node nodes (Payload state)) = (state, acc, enumCond node):(nodes >>= enumNode)
     where
-      enumNode :: (String, Node) -> [(Int, [(String, Int)])]
+      enumNode :: (String, Node) -> [(Int, String, [(String, Int)])]
       enumNode (_, (EndNode _)) = []
-      enumNode (_, n@(Node _ _)) = flatNode n
+      enumNode (str, n@(Node _ _)) = flatNode' (acc ++ str) n
       enumCond :: Node -> [(String, Int)]
       enumCond (Node nodes' (Payload _)) = fmap enumNexts nodes'
         where
@@ -72,7 +75,7 @@ join :: String -> [String] -> String
 join indent xs = intercalate "\n" (fmap (indent++) xs)
 
 compileSM2JS :: StateMachine -> String
-compileSM2JS (StateMachine conditions) = join "" ([
+compileSM2JS (StateMachine pnode conditions) = join "" ([
     "function(orig_str) {",
     "  const length = orig_str.length;",
     "  let state = 0;",
@@ -89,11 +92,17 @@ compileSM2JS (StateMachine conditions) = join "" ([
     "  return false;",
     "}"])
     where
-        compileCond :: String -> (Int, [(String, Int)]) -> [String]
-        compileCond indent (state, nexts) = fmap (indent++) (
-            ["case "++(show state)++":"] ++
+        compileCond :: String -> (Int, String, [(String, Int)]) -> [String]
+        compileCond indent (state, substr, nexts) = fmap (indent++) (
+            ["case "++(show state)++": // [" ++ substr ++ "]"] ++
             (nexts >>= \(str, next) -> fmap ("  "++) $ compileNext str next)++
-            ["  pos++; cur = pos; continue;"])
+            ["  pos += "++ (show $ calcNext substr) ++"; cur = pos; continue;"])
+        calcNext :: String -> Int
+        calcNext [] = 1
+        calcNext (_:xs) = if partialMatch pnode xs then 1 else calcNext' 2 xs
+        calcNext' :: Int -> String -> Int
+        calcNext' cnt [] = cnt
+        calcNext' cnt (_:xs) = if partialMatch pnode xs then cnt else calcNext' (1+cnt) xs
         compileNext :: String -> Int -> [String]
         compileNext "" next | next <= 0 = ["return true;"];
         compileNext str next =

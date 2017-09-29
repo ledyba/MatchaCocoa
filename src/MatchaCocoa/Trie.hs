@@ -2,7 +2,8 @@ module MatchaCocoa.Trie (
   Node(..),
   Payload(..),
   build,
-  match
+  match,
+  partialMatch
 ) where
 
 
@@ -18,6 +19,20 @@ emptyTrie = Node [] emptyPayload
 
 build :: [String] -> Node
 build = foldl appendWord emptyTrie
+
+partialMatch :: Node -> String -> Bool
+partialMatch (EndNode _) _ = True
+partialMatch (Node nodes _) word = match' nodes
+  where
+    match' :: [(String,Node)] -> Bool
+    match' [] = False
+    match' ((str, node):xs) =
+      case prefixLen str word of
+        (_, _, []) -> True
+        ([], [], _) -> True
+        ([], _, _) -> match' xs
+        (_, [], left) -> match node left
+        (_, _, _) -> False
 
 match :: Node -> String -> Bool
 match (EndNode _) [] = True
