@@ -43,12 +43,12 @@ function(orig_str) {
         cur += 3;
         continue;
       }
-      pos += 1; cur = pos; continue;
+      pos += 1; cur = pos; state = 0; continue;
     case 1: // [フシギ]
       if(str[cur] === 12477 && str[cur+1] === 12454) return true; // [フシギソウ]
       if(str[cur] === 12480 && str[cur+1] === 12493) return true; // [フシギダネ]
       if(str[cur] === 12496 && str[cur+1] === 12490) return true; // [フシギバナ]
-      pos += 3; cur = pos; continue;
+      pos += 3; cur = pos; state = 0; continue;
     default: throw new Exception('Unknown state: '+state);
   }
   return false;
@@ -90,8 +90,8 @@ See: [./bench](./bench) directory.
 
 ```sh
 % cd bench && node bench.js
-method=Normal              , time=     22.00μs/op, matches=20%
-method=Regex               , time=      2.33μs/op, matches=20%
-method=Naive Native Code   , time=     12.91μs/op, matches=20%
-method=Native StateMachine , time=      6.60μs/op, matches=20%
+method=Normal              , time=     26.42μs/op, matches=20%
+method=Regex               , time=      2.70μs/op, matches=20%
+method=Naive Native Code   , time=     14.90μs/op, matches=20%
+method=Native StateMachine , time=     15.13μs/op, matches=20%
 ```

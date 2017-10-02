@@ -99,7 +99,7 @@ compileSM2JS (StateMachine pnode conditions) = join "" ([
         compileCond indent (state, substr, nexts) = fmap (indent++) (
             ["case "++(show state)++": // [" ++ substr ++ "]"] ++
             (nexts >>= \(str, next) -> fmap ("  "++) $ compileNext substr str next)++
-            ["  pos += "++ (show $ calcNext pnode substr) ++"; cur = pos; continue;"])
+            ["  pos += "++ (show $ calcNext pnode substr) ++"; cur = pos; state = 0; continue;"])
         compileNext :: String -> String -> Int -> [String]
         compileNext substr "" next | next <= 0 = ["return true; // [" ++ substr ++ "]"];
         compileNext substr str next =
