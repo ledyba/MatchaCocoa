@@ -27,23 +27,28 @@ A compiler to generate words matcher for js and regex.
 ```js
 // % stack exec matcha-cocoa js-statemachine simple.txt
 /* Native State Machine */
-function(str) {
+function(orig_str) {
+  const length = orig_str.length;
   let state = 0;
   let pos = 0;
   let cur = 0;
-  for(;pos < str.length;) switch(state) {
-    case 0:
-      if(str.startsWith('フシギ', cur)) {
-        state=1;
+  let str = new Array(length);
+  for(let i=0;i<length;i++) {
+    str[i] = orig_str.charCodeAt(i);
+  }
+  while(pos < length) switch(state) {
+    case 0: // []
+      if(str[cur] === 12501 && str[cur+1] === 12471 && str[cur+2] === 12462) { // [フシギ]
+        state = 1;
         cur += 3;
         continue;
       }
-      pos++; cur = pos; continue;
-    case 1:
-      if(str.startsWith('ソウ', cur)) return true;
-      if(str.startsWith('ダネ', cur)) return true;
-      if(str.startsWith('バナ', cur)) return true;
-      pos++; cur = pos; continue;
+      pos += 1; cur = pos; continue;
+    case 1: // [フシギ]
+      if(str[cur] === 12477 && str[cur+1] === 12454) return true; // [フシギソウ]
+      if(str[cur] === 12480 && str[cur+1] === 12493) return true; // [フシギダネ]
+      if(str[cur] === 12496 && str[cur+1] === 12490) return true; // [フシギバナ]
+      pos += 3; cur = pos; continue;
     default: throw new Exception('Unknown state: '+state);
   }
   return false;
@@ -53,15 +58,21 @@ function(str) {
 ```js
 // % stack exec matcha-cocoa js-naive simple.txt
 /* Naive Native Code */
-function(str){
-  for(let pos = 0; pos < str.length; pos++) {
-    if((
-      (str.startsWith('フシギ', pos + 0) &&
-        ((str.startsWith('ソウ', pos + 3) && true) ||
-        (str.startsWith('ダネ', pos + 3) && true) ||
-        (str.startsWith('バナ', pos + 3) && true))))) {
-          return true;
+function(orig_str){
+  const length = orig_str.length;
+  let str = new Array(length);
+  for(let i=0;i < length;i++) {
+    str[i] = orig_str.charCodeAt(i);
+  }
+  let pos = 0;
+  while(pos < length) {
+    if(str[pos] === 12501 && str[pos+1] === 12471 && str[pos+2] === 12462) { // [フシギ]
+      if(str[pos+3] === 12477 && str[pos+4] === 12454) return true; // [フシギソウ]
+      if(str[pos+3] === 12480 && str[pos+4] === 12493) return true; // [フシギダネ]
+      if(str[pos+3] === 12496 && str[pos+4] === 12490) return true; // [フシギバナ]
+      pos+=3; continue;
     }
+    pos+=1; continue;
   }
   return false;
 }
