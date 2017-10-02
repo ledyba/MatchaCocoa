@@ -64,14 +64,17 @@ appendWord (Node nodes p) word = Node (append nodes) p
     -- TODO: Tail Recursive.
     append :: [(String,Node)] -> [(String,Node)]
     append [] = [(word, EndNode emptyPayload)]
-    append (c@(cstr, cnode):leftNodes) =
-          case prefixLen cstr word of
-            ([], [], []) -> c:leftNodes -- Matches. the same empty word.
-            ([], _, _) -> (c:(append leftNodes)) -- Not matched. Try next.
-            (_, [], []) -> c:leftNodes -- Matches. the same word.
-            (commonStr, [], leftWord) -> case cnode of
-              Node _ _-> (commonStr, appendWord cnode leftWord):leftNodes
-              EndNode p1 -> (commonStr, Node [("", EndNode p1), (leftWord, EndNode emptyPayload)] emptyPayload):leftNodes
+    append (cur@(cword, cnode):leftNodes) =
+          case prefixLen cword word of
+            ([], [], []) -> cur:leftNodes -- Matches. the same empty word.
+            ([], _, _) -> -- Not matched.
+              if word > cword then (cur:(append leftNodes)) -- Try next.
+                              else (word, EndNode emptyPayload):cur:leftNodes -- insert here.
+            (_, [], []) -> cur:leftNodes -- Matches. the non-empty same word.
+            (commonStr, [], leftWord) ->
+              case cnode of
+                Node _ _-> (commonStr, appendWord cnode leftWord):leftNodes
+                EndNode p1 -> (commonStr, Node [("", EndNode p1), (leftWord, EndNode emptyPayload)] emptyPayload):leftNodes
             (commonStr, leftStr, leftWord) ->
               if leftWord < leftStr then (commonStr, Node [(leftWord, EndNode emptyPayload),(leftStr, cnode)] emptyPayload):leftNodes
                                     else (commonStr, Node [(leftStr, cnode),(leftWord, EndNode emptyPayload)] emptyPayload):leftNodes
