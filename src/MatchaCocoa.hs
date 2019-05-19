@@ -51,8 +51,11 @@ compile JS_Naive words = join "" $ [
 compile Regex words = compile' (build words)
     where
         compile' (EndNode _) = ""
-        compile' (Node nodes _) = "(?:"++(intercalate "|" (fmap compileNodes nodes))++")"
+        compile' (Node nodes _) = "(?:"++(intercalate "|" (fmap compileNodes (emitEndNodes nodes)))++")"
             where
+                emitEndNodes = filter (not.isEnd) 
+                isEnd ("", _) = True
+                isEnd _ = False
                 compileNodes (str, node) = str ++ (compile' node)
 
 data StateMachine = StateMachine Node [(Int, String, [(String, Int)])] deriving (Show, Eq)
